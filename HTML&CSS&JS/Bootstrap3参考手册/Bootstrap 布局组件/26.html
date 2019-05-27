@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 警告（Alerts）</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 警告（Alerts）</h1>
+	<hr>
+		<p>本章将讲解警告（Alerts）以及 Bootstrap 所提供的用于警告的 class。警告（Alerts）向用户提供了一种定义消息样式的方式。它们为典型的用户操作提供了上下文信息反馈。</p><p>您可以为警告框添加一个可选的关闭按钮。为了创建一个内联的可取消的警告框，请使用 <a textvalue="警告（Alerts） jQuery 插件" target="_blank" href="/api/view/a/812">警告（Alerts） jQuery 插件</a>。</p><p>您可以通过创建一个 &lt;div&gt;，并向其添加一个 <strong>.alert</strong> class 和四个上下文 class（即<strong> .alert-success、.alert-info、.alert-warning、.alert-danger</strong>）之一，来添加一个基本的警告框。下面的实例演示了这点：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;警告（Alerts）&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-success&quot;&gt;成功！很好地完成了提交。&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-info&quot;&gt;信息！请注意这个信息。&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-warning&quot;&gt;警告！请不要提交。&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-danger&quot;&gt;错误！请进行一些更改。&lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1683" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab22b3f7b1.jpg" alt="警告（Alerts）"/></div><h2>可取消的警告（Dismissal Alerts）</h2><p>创建一个可取消的警告（Dismissal Alert）步骤如下：</p><ul class="list-group"><li class="list-group-item">通过创建一个 &lt;div&gt;，并向其添加一个 <strong>.alert</strong> class 和四个上下文 class（即<strong> .alert-success、.alert-info、.alert-warning、.alert-danger</strong>）之一，来添加一个基本的警告框。</li><li class="list-group-item">同时向上面的 &lt;div&gt; class 添加可选的 <strong>.alert-dismissable</strong>。</li><li class="list-group-item">添加一个关闭按钮。</li></ul><p>下面的实例演示了这点：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;可取消的警告（Dismissal&nbsp;Alerts）&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-success&nbsp;alert-dismissable&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aria-hidden=&quot;true&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;times;
+&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;成功！很好地完成了提交。
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-info&nbsp;alert-dismissable&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aria-hidden=&quot;true&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;times;
+&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;信息！请注意这个信息。
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-warning&nbsp;alert-dismissable&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aria-hidden=&quot;true&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;times;
+&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;警告！请不要提交。
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-danger&nbsp;alert-dismissable&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aria-hidden=&quot;true&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;times;
+&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;错误！请进行一些更改。
+&lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><blockquote><img src="../image/560ab01874dc2.png"/>请确保使用带有 <em>data-dismiss=&quot;alert&quot;</em> data 属性的 &lt;button&gt; 元素。</blockquote><p><a href="http://www.shouce.ren/study/api/s/1684" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab22b69b83.jpg" alt="可取消的警告（Dismissal Alerts）"/></div><h2>警告（Alerts）中的链接</h2><p>在警告（Alerts）中创建链接的步骤如下：</p><ul class="list-group"><li class="list-group-item">通过创建一个 &lt;div&gt;，并向其添加一个 <strong>.alert</strong> class 和四个上下文 class（即<strong> .alert-success、.alert-info、.alert-warning、.alert-danger</strong>）之一，来添加一个基本的警告框。</li><li class="list-group-item">使用 <strong>.alert-link</strong> 实体类来快速提供带有匹配颜色的链接。</li></ul><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;警告（Alerts）中的链接&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-success&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;alert-link&quot;&gt;成功！很好地完成了提交。&lt;/a&gt;
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-info&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;alert-link&quot;&gt;信息！请注意这个信息。&lt;/a&gt;
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-warning&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;alert-link&quot;&gt;警告！请不要提交。&lt;/a&gt;
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-danger&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;alert-link&quot;&gt;错误！请进行一些更改。&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1685" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab22b981be.jpg" alt="警告（Alerts）中的链接"/></div>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

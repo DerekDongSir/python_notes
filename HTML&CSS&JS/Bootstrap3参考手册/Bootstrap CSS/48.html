@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 网格系统实例：堆叠的水平</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 网格系统实例：堆叠的水平</h1>
+	<hr>
+		  <p>让我们来看一个带有简单布局的网格实例：包含两个列，每个列包含两个段落。（在这里，为每个列分别定义了样式，您可以避免这么做。）</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 堆叠的水平&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="container"&gt;
+   &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+   &lt;div class="row"&gt;
+
+      &lt;div class="col-md-6"  style="background-color: #dedef8; box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;"&gt;
+         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. 
+         &lt;/p&gt;
+
+         &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
+            quae ab illo inventore veritatis et quasi architecto beatae vitae 
+            dicta sunt explicabo. 
+         &lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;div class="col-md-6" style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;"&gt;
+         &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+            accusantium doloremque laudantium.
+         &lt;/p&gt;
+
+         &lt;p&gt; Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
+            consectetur, adipisci velit, sed quia non numquam eius modi 
+            tempora incidunt ut labore et dolore magnam aliquam quaerat 
+            voluptatem. 
+         &lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1746" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/5609faaaa257a.jpg" alt="堆叠的水平网格系统">
+</div> <b>细节</b> <ul class="list-group">
+<li class="list-group-item">
+<b>&lt;div class="container"&gt;...&lt;/div&gt;</b> 元素被添加，确保居中和最大宽度。</li> <li class="list-group-item">一旦添加了容器，接下来您需要考虑以行为单位。添加 <b>&lt;div class="row"&gt;...&lt;/div&gt;</b>，并在行内添加列 <b>&lt;div class="col-md-6"&gt;&lt;/div&gt;</b>。</li> <li class="list-group-item">网格中的每一行是由 12 个单元组成的，您可以使用这些单元定义列的尺寸。在我们的实例中，有两个列，每个列由 6 个单元组成，即 6+6=12。</li> </ul>
+<p>您可以尝试其他更多的选项，比如 <b>&lt;div class="col-md-3"&gt;&lt;/div&gt;</b> 和 <b>&lt;div class="col-md-9"&gt;&lt;/div&gt;</b> 或 <b>&lt;div class="col-md-7"&gt;&lt;/div&gt;</b> 和 <b>&lt;div class="col-md-5"&gt;&lt;/div&gt;</b>。</p> <p>您可以尝试一下，但要确保总和总是 12。</p> 	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

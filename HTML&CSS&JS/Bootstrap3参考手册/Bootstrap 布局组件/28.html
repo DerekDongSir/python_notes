@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 多媒体对象（Media Object）</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 多媒体对象（Media Object）</h1>
+	<hr>
+		  <p>本章我们将讲解 Bootstrap 中的多媒体对象（Media Object）。这些抽象的对象样式用于创建各种类型的组件（比如：博客评论），我们可以在组件中使用图文混排，图像可以左对齐或者右对齐。媒体对象可以用更少的代码来实现媒体对象与文字的混排。</p> <p>媒体对象轻量标记、易于扩展的特性是通过向简单的标记应用 class 来实现的。你可以在 HTML 标签中添加以下两种形式来设置媒体对象：</p> <ul class="list-group">
+<li class="list-group-item">
+<b>.media</b>：该 class 允许将媒体对象里的多媒体（图像、视频、音频）浮动到内容区块的左边或者右边。</li> <li class="list-group-item">
+<b>.media-list</b>：如果你需要一个列表，各项内容是无序列表的一部分，可以使用该 class。可用于评论列表与文章列表。</li> </ul>
+<p>让我们来看看下面这个有关默认的媒体对象 .media 的实例：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 默认的媒体对象&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="media"&gt;
+   &lt;a class="pull-left" href="#"&gt;
+      &lt;img class="media-object" src="/wp-content/uploads/2014/06/64.jpg" 
+      alt="媒体对象"&gt;
+   &lt;/a&gt;
+   &lt;div class="media-body"&gt;
+      &lt;h4 class="media-heading"&gt;媒体标题&lt;/h4&gt;
+      这是一些示例文本。这是一些示例文本。 
+      这是一些示例文本。这是一些示例文本。
+	  这是一些示例文本。这是一些示例文本。
+	  这是一些示例文本。这是一些示例文本。
+	  这是一些示例文本。这是一些示例文本。
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="media"&gt;
+   &lt;a class="pull-left" href="#"&gt;
+      &lt;img class="media-object" src="/wp-content/uploads/2014/06/64.jpg" 
+      alt="媒体对象"&gt;
+   &lt;/a&gt;
+   &lt;div class="media-body"&gt;
+      &lt;h4 class="media-heading"&gt;媒体标题&lt;/h4&gt;
+      这是一些示例文本。这是一些示例文本。 
+      这是一些示例文本。这是一些示例文本。
+	  这是一些示例文本。这是一些示例文本。
+	  这是一些示例文本。这是一些示例文本。
+	  这是一些示例文本。这是一些示例文本。
+      &lt;div class="media"&gt;
+         &lt;a class="pull-left" href="#"&gt;
+            &lt;img class="media-object" src="/wp-content/uploads/2014/06/64.jpg" 
+            alt="媒体对象"&gt;
+         &lt;/a&gt;
+         &lt;div class="media-body"&gt;
+            &lt;h4 class="media-heading"&gt;媒体标题&lt;/h4&gt;
+            这是一些示例文本。这是一些示例文本。
+            这是一些示例文本。这是一些示例文本。
+            这是一些示例文本。这是一些示例文本。 
+            这是一些示例文本。这是一些示例文本。
+			这是一些示例文本。这是一些示例文本。
+         &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1691" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab24233d6a.jpg" alt="默认的媒体对象">
+</div> <p>让我们来看看下面这个有关媒体对象列表 .media-list 的实例：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 媒体对象列表&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;ul class="media-list"&gt;
+   &lt;li class="media"&gt;
+      &lt;a class="pull-left" href="#"&gt;
+         &lt;img class="media-object" src="/wp-content/uploads/2014/06/64.jpg" 
+         alt="通用的占位符图像"&gt;
+      &lt;/a&gt;
+      &lt;div class="media-body"&gt;
+         &lt;h4 class="media-heading"&gt;媒体标题&lt;/h4&gt;
+         &lt;p&gt;这是一些示例文本。这是一些示例文本。 
+			这是一些示例文本。这是一些示例文本。
+			这是一些示例文本。这是一些示例文本。
+			这是一些示例文本。这是一些示例文本。
+			这是一些示例文本。这是一些示例文本。&lt;/p&gt;
+         &lt;!-- 嵌套的媒体对象 --&gt;
+         &lt;div class="media"&gt;
+            &lt;a class="pull-left" href="#"&gt;
+               &lt;img class="media-object" src="/wp-content/uploads/2014/06/64.jpg" 
+               alt="通用的占位符图像"&gt;
+            &lt;/a&gt;
+            &lt;div class="media-body"&gt;
+               &lt;h4 class="media-heading"&gt;嵌套的媒体标题&lt;/h4&gt;
+               这是一些示例文本。这是一些示例文本。
+			   这是一些示例文本。这是一些示例文本。
+			   这是一些示例文本。这是一些示例文本。
+			   这是一些示例文本。这是一些示例文本。
+			   这是一些示例文本。这是一些示例文本。
+               &lt;!-- 嵌套的媒体对象 --&gt;
+               &lt;div class="media"&gt;
+                  &lt;a class="pull-left" href="#"&gt;
+                     &lt;img class="media-object" src="/wp-content/uploads/2014/06/64.jpg" 
+                     alt="通用的占位符图像"&gt;
+                  &lt;/a&gt;
+                  &lt;div class="media-body"&gt;
+                     &lt;h4 class="media-heading"&gt;嵌套的媒体标题&lt;/h4&gt;
+                     这是一些示例文本。这是一些示例文本。
+					 这是一些示例文本。这是一些示例文本。
+					 这是一些示例文本。这是一些示例文本。
+					 这是一些示例文本。这是一些示例文本。
+					 这是一些示例文本。这是一些示例文本。
+                  &lt;/div&gt;
+               &lt;/div&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;!-- 嵌套的媒体对象 --&gt;
+         &lt;div class="media"&gt;
+            &lt;a class="pull-left" href="#"&gt;
+               &lt;img class="media-object" src="/wp-content/uploads/2014/06/64.jpg" 
+               alt="通用的占位符图像"&gt;
+            &lt;/a&gt;
+            &lt;div class="media-body"&gt;
+               &lt;h4 class="media-heading"&gt;嵌套的媒体标题&lt;/h4&gt;
+               这是一些示例文本。这是一些示例文本。
+			   这是一些示例文本。这是一些示例文本。
+			   这是一些示例文本。这是一些示例文本。
+			   这是一些示例文本。这是一些示例文本。
+			   这是一些示例文本。这是一些示例文本。
+            &lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/li&gt;
+   &lt;li class="media"&gt;
+      &lt;a class="pull-right" href="#"&gt;
+         &lt;img class="media-object" src="/wp-content/uploads/2014/06/64.jpg" 
+         alt="通用的占位符图像"&gt;
+      &lt;/a&gt;
+      &lt;div class="media-body"&gt;
+         &lt;h4 class="media-heading"&gt;媒体标题&lt;/h4&gt;
+         这是一些示例文本。这是一些示例文本。
+		 这是一些示例文本。这是一些示例文本。
+		 这是一些示例文本。这是一些示例文本。
+		 这是一些示例文本。这是一些示例文本。
+		 这是一些示例文本。这是一些示例文本。
+      &lt;/div&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1692" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab24272578.jpg" alt="媒体对象列表">
+</div> 	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

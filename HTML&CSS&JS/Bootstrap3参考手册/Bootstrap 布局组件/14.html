@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 按钮组</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 按钮组</h1>
+	<hr>
+		<div class="tutintro"><p>按钮组允许多个按钮被堆叠在同一行上。当你想要把按钮对齐在一起时，这就显得非常有用。您可以通过 <a textvalue="Bootstrap 按钮（Button） 插件" target="_blank" href="/api/view/a/813">Bootstrap 按钮（Button） 插件</a> 添加可选的 JavaScript 单选框和复选框样式行为。</p><p>下面的表格总结了 Bootstrap 提供的使用按钮组的一些重要的 class：</p><table class="reference notranslate"><tbody><tr class="firstRow"><th style="30%">Class</th><th>描述</th><th>代码示例</th></tr><tr><td>.btn-group</td><td>该 class 用于形成基本的按钮组。在 <strong>.btn-group</strong> 中放置一系列带有 class <strong>.btn</strong> 的按钮。</td><td><pre class="prettyprint">&lt;div&nbsp;class=&quot;btn-group&quot;&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;Button1&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;Button2&lt;/button&gt;
+&lt;/div&gt;</pre></td></tr><tr><td>.btn-toolbar</td><td>该 class 有助于把几组 &lt;div class=&quot;btn-group&quot;&gt; 结合到一个 &lt;div class=&quot;btn-toolbar&quot;&gt; 中，一般获得更复杂的组件。</td><td><pre class="prettyprint">&lt;div&nbsp;class=&quot;btn-toolbar&quot;&nbsp;role=&quot;toolbar&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;btn-group&quot;&gt;...&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;btn-group&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre></td></tr><tr><td>.btn-group-lg, .btn-group-sm, .btn-group-xs</td><td>这些 class 可应用到整个按钮组的大小调整，而不需要对每个按钮进行大小调整。</td><td><pre class="prettyprint">&lt;div&nbsp;class=&quot;btn-group&nbsp;btn-group-lg&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;btn-group&nbsp;btn-group-sm&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;btn-group&nbsp;btn-group-xs&quot;&gt;...&lt;/div&gt;</pre></td></tr><tr><td>.btn-group-vertical</td><td>该 class 让一组按钮垂直堆叠显示，而不是水平堆叠显示。</td><td><pre class="prettyprint">&lt;div&nbsp;class=&quot;btn-group-vertical&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/div&gt;</pre></td></tr></tbody></table></div><h2>基本的按钮组</h2><p>下面的实例演示了上面表格中讨论到的 class <strong>.btn-group</strong> 的使用：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;基本的按钮组&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;btn-group&quot;&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;1&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;2&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;3&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1634" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab1596e1c9.jpg" alt="基本的按钮组"/></div><h2>按钮工具栏</h2><p>下面的实例演示了上面表格中讨论到的 class <strong>.btn-toolbar</strong> 的使用：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;按钮工具栏&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;btn-toolbar&quot;&nbsp;role=&quot;toolbar&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;btn-group&quot;&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;1&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;2&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;3&lt;/button&gt;
+&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;btn-group&quot;&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;4&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;5&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;6&lt;/button&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;btn-group&quot;&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;7&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;8&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;9&lt;/button&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1635" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab1598e958.jpg" alt="按钮工具栏"/></div><h2>按钮的大小</h2><p>下面的实例演示了上面表格中讨论到的 class <strong>.btn-group-*</strong> 的使用：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;按钮组的大小&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;btn-group&nbsp;btn-group-lg&quot;&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;1&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;2&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;3&lt;/button&gt;
+&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;btn-group&nbsp;btn-group-sm&quot;&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;4&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;5&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;6&lt;/button&gt;
+&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;btn-group&nbsp;btn-group-xs&quot;&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;7&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;8&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;9&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1636" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab159b1be0.jpg" alt="按钮组的大小"/></div><h2>嵌套</h2><p>您可以在一个按钮组内嵌套另一个按钮组，即，在一个 <strong>.btn-group</strong> 内嵌套另一个 <strong>.btn-group </strong>。当您向让下拉菜单与一系列按钮组合使用时，就会用到这个。</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;嵌套的按钮组&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;btn-group&quot;&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;1&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;2&lt;/button&gt;
+
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;btn-group&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&nbsp;dropdown-toggle&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-toggle=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下列
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;caret&quot;&gt;&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;dropdown-menu&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;下拉链接&nbsp;1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;下拉链接&nbsp;2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1637" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab159d2b40.jpg" alt="嵌套的按钮组"/></div><h2>垂直的按钮组</h2><p>下面的实例演示了上面表格中讨论到的 class <strong>.btn-group-vertical</strong> 的使用：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;垂直的按钮组&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;btn-group-vertical&quot;&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;1&lt;/button&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;按钮&nbsp;2&lt;/button&gt;
+
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;btn-group-vertical&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&nbsp;dropdown-toggle&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-toggle=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下拉
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;caret&quot;&gt;&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;dropdown-menu&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;下拉链接&nbsp;1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;下拉链接&nbsp;2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1638" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab159f232f.jpg" alt="垂直的按钮组"/></div>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

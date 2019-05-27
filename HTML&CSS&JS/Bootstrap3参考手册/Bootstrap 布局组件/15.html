@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 按钮下拉菜单</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 按钮下拉菜单</h1>
+	<hr>
+		  <p>本章将讲解如何使用 Bootstrap class 向按钮添加下拉菜单。如需向按钮添加下拉菜单，只需要简单地在在一个 <b>.btn-group</b> 中放置按钮和下拉菜单即可。您也可以使用 &lt;span class="caret"&gt;&lt;/span&gt; 来指示按钮作为下拉菜单。</p> <p>下面的实例演示了一个基本的简单的按钮下拉菜单：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 基本的按钮下拉菜单&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="btn-group"&gt;
+   &lt;button type="button" class="btn btn-default dropdown-toggle" 
+      data-toggle="dropdown"&gt;
+      默认 &lt;span class="caret"&gt;&lt;/span&gt;
+   &lt;/button&gt;
+   &lt;ul class="dropdown-menu" role="menu"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;另一个功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;其他&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="divider"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;分离的链接&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="btn-group"&gt;
+   &lt;button type="button" class="btn btn-primary dropdown-toggle" 
+      data-toggle="dropdown"&gt;
+      原始 &lt;span class="caret"&gt;&lt;/span&gt;
+   &lt;/button&gt;
+   &lt;ul class="dropdown-menu" role="menu"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;另一个功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;其他&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="divider"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;分离的链接&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1639" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab16730c7b.jpg" alt="基本的按钮下拉菜单">
+</div> <h2>分割的按钮下拉菜单</h2> <p>分割的按钮下拉菜单使用与下拉菜单按钮大致相同的样式，但是对下拉菜单添加了原始的功能。分割按钮的左边是原始的功能，右边是显示下拉菜单的切换。</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 分割的按钮下拉菜单&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="btn-group"&gt;
+   &lt;button type="button" class="btn btn-default"&gt;默认&lt;/button&gt;
+   &lt;button type="button" class="btn btn-default dropdown-toggle" 
+      data-toggle="dropdown"&gt;
+      &lt;span class="caret"&gt;&lt;/span&gt;
+      &lt;span class="sr-only"&gt;切换下拉菜单&lt;/span&gt;
+   &lt;/button&gt;
+   &lt;ul class="dropdown-menu" role="menu"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;另一个功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;其他&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="divider"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;分离的链接&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="btn-group"&gt;
+   &lt;button type="button" class="btn btn-primary"&gt;原始&lt;/button&gt;
+   &lt;button type="button" class="btn btn-primary dropdown-toggle" 
+      data-toggle="dropdown"&gt;
+      &lt;span class="caret"&gt;&lt;/span&gt;
+      &lt;span class="sr-only"&gt;切换下拉菜单&lt;/span&gt;
+   &lt;/button&gt;
+   &lt;ul class="dropdown-menu" role="menu"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;另一个功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;其他&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="divider"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;分离的链接&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1640" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab1676351f.jpg" alt="分割的按钮下拉菜单">
+</div> <h2>按钮下拉菜单的大小</h2> <p>您可以使用带有各种大小按钮的下拉菜单：<b>.btn-large、.btn-sm </b>或 <b>.btn-xs</b>。</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 按钮下拉菜单的大小&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="btn-group"&gt;
+   &lt;button type="button" class="btn btn-default dropdown-toggle btn-lg" 
+      data-toggle="dropdown"&gt;
+      默认 &lt;span class="caret"&gt;&lt;/span&gt;
+   &lt;/button&gt;
+   &lt;ul class="dropdown-menu" role="menu"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;另一个功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;其他&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="divider"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;分离的链接&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="btn-group"&gt;
+   &lt;button type="button" class="btn btn-primary dropdown-toggle btn-sm" 
+      data-toggle="dropdown"&gt;
+      原始 &lt;span class="caret"&gt;&lt;/span&gt;
+   &lt;/button&gt;
+   &lt;ul class="dropdown-menu" role="menu"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;另一个功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;其他&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="divider"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;分离的链接&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="btn-group"&gt;
+   &lt;button type="button" class="btn btn-success dropdown-toggle btn-xs" 
+      data-toggle="dropdown"&gt;
+      成功 &lt;span class="caret"&gt;&lt;/span&gt;
+   &lt;/button&gt;
+   &lt;ul class="dropdown-menu" role="menu"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;另一个功能&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;其他&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="divider"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;分离的链接&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1641" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab1678159e.jpg" alt="按钮下拉菜单的大小">
+</div> <h2>按钮上拉菜单</h2> <p>菜单也可以往上拉伸的，只需要简单地向父 <b>.btn-group</b> 容器添加 <b>.dropup</b> 即可。</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 按钮上拉菜单&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="row" style="margin-left:50px; margin-top:200px"&gt;
+   &lt;div class="btn-group dropup"&gt;
+      &lt;button type="button" class="btn btn-default dropdown-toggle" 
+         data-toggle="dropdown"&gt;
+         默认 &lt;span class="caret"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;ul class="dropdown-menu" role="menu"&gt;
+         &lt;li&gt;&lt;a href="#"&gt;功能&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href="#"&gt;另一个功能&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href="#"&gt;其他&lt;/a&gt;&lt;/li&gt;
+         &lt;li class="divider"&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href="#"&gt;分离的链接&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+   &lt;div class="btn-group dropup"&gt;
+      &lt;button type="button" class="btn btn-primary dropdown-toggle" 
+         data-toggle="dropdown"&gt;
+         原始 &lt;span class="caret"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;ul class="dropdown-menu" role="menu"&gt;
+         &lt;li&gt;&lt;a href="#"&gt;功能&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href="#"&gt;另一个功能&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href="#"&gt;其他&lt;/a&gt;&lt;/li&gt;
+         &lt;li class="divider"&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href="#"&gt;分离的链接&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1642" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab167a1175.jpg" alt="按钮上拉菜单">
+</div> 	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

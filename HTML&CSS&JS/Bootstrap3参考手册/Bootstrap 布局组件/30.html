@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 面板（Panels）</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 面板（Panels）</h1>
+	<hr>
+		  <p>本章将讲解 Bootstrap 面板（Panels）。面板组件用于把 DOM 组件插入到一个盒子中。创建一个基本的面板，只需要向 &lt;div&gt; 元素添加 class <b>.panel</b> 和 class <b>.panel-default</b> 即可，如下面的实例所示：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 默认的面板&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="panel panel-default"&gt;
+   &lt;div class="panel-body"&gt;
+      这是一个基本的面板
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1697" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab25b108a7.jpg" alt="默认的面板">
+</div> <h2>面板标题</h2> <p>我们可以通过以下两种方式来添加面板标题：</p> <ul class="list-group">
+<li class="list-group-item">使用 <b>.panel-heading</b> class 可以很简单地向面板添加标题容器。to easily add a heading container to your panel.</li> <li class="list-group-item">使用带有 <b>.panel-title</b> class 的 &lt;h1&gt;-&lt;h6&gt; 来添加预定义样式的标题。</li> </ul>
+<p>下面的实例演示了这两种方式：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 面板标题&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="panel panel-default"&gt;
+   &lt;div class="panel-heading"&gt;
+      不带 title 的面板标题
+   &lt;/div&gt;
+   &lt;div class="panel-body"&gt;
+      面板内容
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="panel panel-default"&gt;
+   &lt;div class="panel-heading"&gt;
+      &lt;h3 class="panel-title"&gt;
+         带有 title 的面板标题
+      &lt;/h3&gt;
+   &lt;/div&gt;
+   &lt;div class="panel-body"&gt;
+      面板内容
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1698" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab25b4a295.jpg" alt="面板标题">
+</div> <h2>面板脚注</h2> <p>我们可以在面板中添加脚注，只需要把按钮或者副文本放在带有 class <b>.panel-footer</b> 的 &lt;div&gt; 中即可。下面的实例演示了这点：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 面板脚注&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="panel panel-default"&gt;
+   &lt;div class="panel-body"&gt;
+      这是一个基本的面板
+   &lt;/div&gt;
+   &lt;div class="panel-footer"&gt;面板脚注&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1699" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab25b6f45e.jpg" alt="面板脚注">
+</div> <blockquote>
+<img src="../image/560ab01874dc2.png">面版脚注不会从带语境色彩的面板中继承颜色和边框，因为它不是前景中的内容。</blockquote> <h2>带语境色彩的面板</h2> <p>使用语境状态类 <b>panel-primary、panel-success、panel-info、panel-warning、panel-danger</b>，来设置带语境色彩的面板，实例如下：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 带语境色彩的面板&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="panel panel-primary"&gt;
+   &lt;div class="panel-heading"&gt;
+      &lt;h3 class="panel-title"&gt;面板标题&lt;/h3&gt;
+   &lt;/div&gt;
+   &lt;div class="panel-body"&gt;
+      这是一个基本的面板
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel panel-success"&gt;
+   &lt;div class="panel-heading"&gt;
+      &lt;h3 class="panel-title"&gt;面板标题&lt;/h3&gt;
+   &lt;/div&gt;
+   &lt;div class="panel-body"&gt;
+      这是一个基本的面板
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel panel-info"&gt;
+   &lt;div class="panel-heading"&gt;
+      &lt;h3 class="panel-title"&gt;面板标题&lt;/h3&gt;
+   &lt;/div&gt;
+   &lt;div class="panel-body"&gt;
+      这是一个基本的面板
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel panel-warning"&gt;
+   &lt;div class="panel-heading"&gt;
+      &lt;h3 class="panel-title"&gt;面板标题&lt;/h3&gt;
+   &lt;/div&gt;
+   &lt;div class="panel-body"&gt;
+      这是一个基本的面板
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel panel-danger"&gt;
+   &lt;div class="panel-heading"&gt;
+      &lt;h3 class="panel-title"&gt;面板标题&lt;/h3&gt;
+   &lt;/div&gt;
+   &lt;div class="panel-body"&gt;
+      这是一个基本的面板
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1700" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab25b8406a.jpg" alt="带语境色彩的面板">
+</div> <h2>带表格的面板</h2> <p>为了在面板中创建一个无边框的表格，我们可以在面板中使用 class <b>.table</b>。假设有个 &lt;div&gt; 包含 <b>.panel-body</b>，我们可以向表格的顶部添加额外的边框用来分隔。如果没有包含 <b>.panel-body</b> 的 &lt;div&gt;，则组件会无中断地从面板头部移动到表格。</p> <p>下面的实例演示了这点：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 带表格的面板&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="panel panel-default"&gt;
+   &lt;div class="panel-heading"&gt;
+      &lt;h3 class="panel-title"&gt;面板标题&lt;/h3&gt;
+   &lt;/div&gt;
+   &lt;div class="panel-body"&gt;
+      这是一个基本的面板
+   &lt;/div&gt;
+   &lt;table class="table"&gt;
+      &lt;th&gt;产品&lt;/th&gt;&lt;th&gt;价格 &lt;/th&gt;
+      &lt;tr&gt;&lt;td&gt;产品 A&lt;/td&gt;&lt;td&gt;200&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;产品 B&lt;/td&gt;&lt;td&gt;400&lt;/td&gt;&lt;/tr&gt;
+   &lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="panel panel-default"&gt;
+   &lt;div class="panel-heading"&gt;面板标题&lt;/div&gt;
+   &lt;table class="table"&gt;
+      &lt;th&gt;产品&lt;/th&gt;&lt;th&gt;价格 &lt;/th&gt;
+      &lt;tr&gt;&lt;td&gt;产品 A&lt;/td&gt;&lt;td&gt;200&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;产品 B&lt;/td&gt;&lt;td&gt;400&lt;/td&gt;&lt;/tr&gt;
+   &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1701" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab25bb22bd.jpg" alt="带表格的面板">
+</div> <h2>带列表组的面板</h2> <p>我们可以在任何面板中包含列表组，通过在 &lt;div&gt; 元素中添加 <b>.panel</b> 和 <b>.panel-default</b> 类来创建面板，并在面板中添加列表组。您可以从 <a target="_blank" href="bootstrap-list-group.htm">列表组</a> 一章中学习如何创建列表组。</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 带列表组的面板&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="panel panel-default"&gt;
+   &lt;div class="panel-heading"&gt;面板标题&lt;/div&gt;
+      &lt;div class="panel-body"&gt;
+         &lt;p&gt;这是一个基本的面板内容。这是一个基本的面板内容。
+         这是一个基本的面板内容。这是一个基本的面板内容。
+         这是一个基本的面板内容。这是一个基本的面板内容。
+		 这是一个基本的面板内容。这是一个基本的面板内容。
+         &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;ul class="list-group"&gt;
+      &lt;li class="list-group-item"&gt;免费域名注册&lt;/li&gt;
+      &lt;li class="list-group-item"&gt;免费 Window 空间托管&lt;/li&gt;
+      &lt;li class="list-group-item"&gt;图像的数量&lt;/li&gt;
+      &lt;li class="list-group-item"&gt;24*7 支持&lt;/li&gt;
+      &lt;li class="list-group-item"&gt;每年更新成本&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1702" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab25bd39ed.jpg" alt="带列表组的面板">
+</div> 	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

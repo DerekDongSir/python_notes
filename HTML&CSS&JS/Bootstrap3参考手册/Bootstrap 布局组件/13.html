@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 下拉菜单（Dropdowns）</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 下拉菜单（Dropdowns）</h1>
+	<hr>
+		<p>本章将重点介绍 Bootstrap 下拉菜单。下拉菜单是可切换的，是以列表格式显示链接的上下文菜单。这可以通过与 <a textvalue="下拉菜单（Dropdown） JavaScript 插件" target="_self" href="/api/view/a/807">下拉菜单（Dropdown） JavaScript 插件</a> 的互动来实现。</p><p>如需使用下列菜单，只需要在 class <strong>.dropdown</strong> 内加上下拉菜单即可。下面的实例演示了基本的下拉菜单：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;下拉菜单（Dropdowns）&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;dropdown-toggle&quot;&nbsp;id=&quot;dropdownMenu1&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-toggle=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主题
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;caret&quot;&gt;&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;dropdown-menu&quot;&nbsp;role=&quot;menu&quot;&nbsp;aria-labelledby=&quot;dropdownMenu1&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;Java&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;数据挖掘&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据通信/网络
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&nbsp;class=&quot;divider&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;分离的链接&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1631" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab13b75bfe.jpg" alt="基本的下拉菜单（Dropdowns）"/></div><h2>选项</h2><h3>对齐</h3><p>通过向 <strong>.dropdown-menu</strong> 添加 class <strong>.pull-right</strong> 来向右对齐下拉菜单。下面的实例演示了这点：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;向右对齐下拉菜单&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;dropdown-toggle&quot;&nbsp;id=&quot;dropdownMenu1&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-toggle=&quot;dropdown&quot;&gt;主题
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;caret&quot;&gt;&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;dropdown-menu&nbsp;pull-right&quot;&nbsp;role=&quot;menu&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aria-labelledby=&quot;dropdownMenu1&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;Java&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;数据挖掘&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据通信/网络
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&nbsp;class=&quot;divider&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;分离的链接&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1632" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab13babf3b.jpg" alt="向右对齐下拉菜单"/></div><h3>标题</h3><p>您可以使用 class <strong>dropdown-header</strong> 向下拉菜单的标签区域添加标题。下面的实例演示了这点：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;下拉菜单标题&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;dropdown-toggle&quot;&nbsp;id=&quot;dropdownMenu1&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-toggle=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主题
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;caret&quot;&gt;&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;dropdown-menu&quot;&nbsp;role=&quot;menu&quot;&nbsp;aria-labelledby=&quot;dropdownMenu1&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&nbsp;class=&quot;dropdown-header&quot;&gt;下拉菜单标题&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&nbsp;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;Java&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;数据挖掘&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据通信/网络
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&nbsp;class=&quot;divider&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&nbsp;class=&quot;dropdown-header&quot;&gt;下拉菜单标题&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;role=&quot;presentation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;role=&quot;menuitem&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;href=&quot;#&quot;&gt;分离的链接&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1633" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab13bc78aa.jpg" alt="下拉菜单标题"/></div>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

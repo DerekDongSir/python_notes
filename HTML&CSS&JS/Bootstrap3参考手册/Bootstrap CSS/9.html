@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 图片</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 图片</h1>
+	<hr>
+		  <p>在本章中，我们将学习 Bootstrap 对图片的支持。Bootstrap 提供了三个可对图片应用简单样式的 class：</p> <ul class="list-group">
+<li class="list-group-item">
+<i>.img-rounded</i>：添加 <i>border-radius:6px</i> 来获得图片圆角。</li> <li class="list-group-item">
+<i>.img-circle</i>：添加 <i>border-radius:500px</i> 来让整个图片变成圆形。</li> <li class="list-group-item">
+<i>.img-thumbnail</i>：添加一些内边距（padding）和一个灰色的边框。</li> </ul>
+<p>请看下面的实例演示：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 图片&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;img src="/wp-content/uploads/2014/06/download.png" 
+   class="img-rounded"&gt;
+&lt;img src="/wp-content/uploads/2014/06/download.png" 
+   class="img-circle"&gt;
+&lt;img src="/wp-content/uploads/2014/06/download.png" 
+   class="img-thumbnail"&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1397" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab078d3b63.jpg" alt="图片">
+</div> <h2>&lt;img&gt; 类</h2> <p>以下类可用于任何图片中。</p> <table class="reference"><tbody>
+<tr>
+<th style="width:25%;">类</th> <th style="width:68%;">描述</th> <th style="width:7%;">实例</th> </tr>
+<tr>
+<td>.img-rounded</td> <td>为图片添加圆角 (IE8 不支持)</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1398">实例 »</a></td> </tr>
+<tr>
+<td>.img-circle</td> <td>将图片变为圆形 (IE8 不支持)</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1399">实例 »</a></td> </tr>
+<tr>
+<td>.img-thumbnail</td> <td>缩略图功能</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1400">实例 »</a></td> </tr>
+<tr>
+<td>.img-responsive</td> <td>图片响应式 (将很好地扩展到父元素)</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1401">实例 »</a></td> </tr>
+</tbody></table>
+<h2>响应式图片</h2> <p> 通过在 &lt;img&gt; 标签添加 .img-responsive 类来让图片支持响应式设计。 图片将很好地扩展到父元素。</p> <p> .img-responsive 类将 max-width: 100%; 和 height: auto; 样式应用在图片上：</p> <div class="example margin-b-10"> <h2 class="example">实例</h2> <pre><div class="example_code"> <span class="highLT">&lt;</span><span class="highELE">img</span> <span class="highATT">src=</span><span class="highVAL">"cinqueterre.jpg"</span> <span class="highATT">class=</span><span class="highVAL">"img-responsive"</span> <span class="highATT">alt=</span><span class="highVAL">"Cinque Terre"</span><span class="highGT">&gt;</span> </div></pre> <a target="_blank" href="http://www.shouce.ren/study/api/s/1401" class="btn btn-success color-f">效果预览 »</a> </div> 	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

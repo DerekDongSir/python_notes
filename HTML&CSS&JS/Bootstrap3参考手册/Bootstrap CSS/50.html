@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 网格系统实例：手机、平板电脑、台式电脑</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 网格系统实例：手机、平板电脑、台式电脑</h1>
+	<hr>
+		<p>我们已经看过 中型和大型设备 。现在，让我们一起看另一个实例，我们将让它同样适用于小型手机。我们要把平板电脑的列分割为 25%/75%，我们将添加如下选项：</p><pre class="prettyprint">&lt;div&nbsp;class=&quot;col-sm-3&nbsp;col-md-6&nbsp;col-lg-4&quot;&gt;....&lt;/div&gt;
+&lt;div&nbsp;class=&quot;col-sm-9&nbsp;col-md-6&nbsp;col-lg-8&quot;&gt;....&lt;/div&gt;</pre><p></p><p>现在，给我们提供了 3 中不同的列布局，分别适用于三种设备。在手机上，它将是左边 25% 右边 75% 的布局。在平板电脑上，它将是 50%/50% 的布局。在大型视口的设备上，它将是 33%/66% 的布局。请查看下面的实例进行验证。（在这里，为每个列分别定义了样式，您可以避免这么做。）</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;手机、平板电脑、台式电脑&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;container&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello,&nbsp;world!&lt;/h1&gt;
+
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;row&quot;&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-sm-3&nbsp;col-md-6&nbsp;col-lg-8&quot;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;background-color:&nbsp;#dedef8;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipisicing&nbsp;elit,&nbsp;sed&nbsp;do&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eiusmod&nbsp;tempor&nbsp;incididunt&nbsp;ut&nbsp;labore&nbsp;et&nbsp;dolore&nbsp;magna&nbsp;aliqua.&nbsp;Ut&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enim&nbsp;ad&nbsp;minim&nbsp;veniam,&nbsp;quis&nbsp;nostrud&nbsp;exercitation&nbsp;ullamco&nbsp;laboris&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nisi&nbsp;ut&nbsp;aliquip&nbsp;ex&nbsp;ea&nbsp;commodo&nbsp;consequat.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Sed&nbsp;ut&nbsp;perspiciatis&nbsp;unde&nbsp;omnis&nbsp;iste&nbsp;natus&nbsp;error&nbsp;sit&nbsp;voluptatem&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accusantium&nbsp;doloremque&nbsp;laudantium,&nbsp;totam&nbsp;rem&nbsp;aperiam,&nbsp;eaque&nbsp;ipsa&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quae&nbsp;ab&nbsp;illo&nbsp;inventore&nbsp;veritatis&nbsp;et&nbsp;quasi&nbsp;architecto&nbsp;beatae&nbsp;vitae&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dicta&nbsp;sunt&nbsp;explicabo.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-sm-9&nbsp;col-md-6&nbsp;col-lg-4&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;background-color:&nbsp;#dedef8;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Sed&nbsp;ut&nbsp;perspiciatis&nbsp;unde&nbsp;omnis&nbsp;iste&nbsp;natus&nbsp;error&nbsp;sit&nbsp;voluptatem&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accusantium&nbsp;doloremque&nbsp;laudantium.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&nbsp;Neque&nbsp;porro&nbsp;quisquam&nbsp;est,&nbsp;qui&nbsp;dolorem&nbsp;ipsum&nbsp;quia&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;consectetur,&nbsp;adipisci&nbsp;velit,&nbsp;sed&nbsp;quia&nbsp;non&nbsp;numquam&nbsp;eius&nbsp;modi&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempora&nbsp;incidunt&nbsp;ut&nbsp;labore&nbsp;et&nbsp;dolore&nbsp;magnam&nbsp;aliquam&nbsp;quaerat&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;voluptatem.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1748" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/5609faf9973ce.jpg" alt="手机、平板电脑、台式电脑网格系统"/></div>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

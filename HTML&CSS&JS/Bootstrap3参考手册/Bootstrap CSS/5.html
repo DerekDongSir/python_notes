@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 代码</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 代码</h1>
+	<hr>
+		  <p>Bootstrap 允许您以两种方式显示代码：</p> <ul class="list-group">
+<li class="list-group-item">第一种是 &lt;code&gt; 标签。如果您想要内联显示代码，那么您应该使用 &lt;code&gt; 标签。</li> <li class="list-group-item">第二种是 &lt;pre&gt; 标签。如果代码需要被显示为一个独立的块元素或者代码有多行，那么您应该使用 &lt;pre&gt; 标签。</li> </ul>
+<p>请确保当您使用 &lt;pre&gt; 和 &lt;code&gt; 标签时，开始和结束标签使用了 unicode 变体：<b> &amp;lt;</b> 和 <b>&amp;gt;</b>。</p> <p>让我们来看看下面的实例：</p> <div class="example margin-b-10"> <h2 class="example">实例</h2> <pre><div class="example_code"> &lt;!DOCTYPE html&gt;<br> &lt;html&gt;<br> &lt;head&gt;<br>   &lt;title&gt;Bootstrap 实例 - 代码&lt;/title&gt;<br>   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;<br>   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;<br>   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;<br> &lt;/head&gt;<br> &lt;body&gt;<br><br> &lt;p&gt;&lt;code&gt;&amp;lt;header&amp;gt;&lt;/code&gt; 作为内联元素被包围。&lt;/p&gt;<br> &lt;p&gt;如果需要把代码显示为一个独立的块元素，请使用 &lt;pre&gt; 标签：&lt;/p&gt;<br> &lt;pre&gt;<br>   &amp;lt;article&amp;gt;<br>     &amp;lt;h1&amp;gt;Article Heading&amp;lt;/h1&amp;gt;<br>   &amp;lt;/article&amp;gt;<br> &lt;/pre&gt;<br> &lt;/body&gt;<br> &lt;/html&gt; </div></pre> <a target="_blank" href="http://www.shouce.ren/study/api/s/1348" class="btn btn-success color-f">效果预览 »</a> </div> <p>实例展示如下图：</p> <div class="m-bg-b"> <img src="../image/560ab0402bed9.jpg" alt="代码">
+</div> 	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

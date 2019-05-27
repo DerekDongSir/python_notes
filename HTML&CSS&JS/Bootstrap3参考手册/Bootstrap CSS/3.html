@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 网格系统</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 网格系统</h1>
+	<hr>
+		<style>table.grid { width:100%; border:none; background-color:#F6F4F0; padding:0px; } table.grid tr { text-align:center; } table.grid td { border:4px solid white; padding:6px; }</style><div class="tutintro"><p>本章节我们将讲解 Bootstrap 的网格系统（Grid System）。</p><p>Bootstrap 提供了一套响应式、移动设备优先的流式网格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。</p></div><h2 class="tutheader">什么是网格（Grid）？</h2><p>摘自维基百科：</p><blockquote><img src="../image/560ab01874dc2.png"/>在平面设计中，网格是一种由一系列用于组织内容的相交的直线（垂直的、水平的）组成的结构（通常是二维的）。它广泛应用于打印设计中的设计布局和内容结构。在网页设计中，它是一种用于快速创建一致的布局和有效地使用 HTML 和 CSS 的方法。</blockquote><p>简单地说，网页设计中的网格用于组织内容，让网站易于浏览，并降低用户端的负载。</p><h2 class="tutheader">什么是 Bootstrap 网格系统（Grid System）？</h2><p>Bootstrap 官方文档中有关网格系统的描述：</p><blockquote><img src="../image/560ab01874dc2.png"/>Bootstrap 包含了一个响应式的、移动设备优先的、不固定的网格系统，可以随着设备或视口大小的增加而适当地扩展到 12 列。它包含了用于简单的布局选项的预定义类，也包含了用于生成更多语义布局的功能强大的混合类。</blockquote><p>让我们来理解一下上面的语句。Bootstrap 3 是移动设备优先的，在这个意义上，Bootstrap 代码从小屏幕设备（比如移动设备、平板电脑）开始，然后扩展到大屏幕设备（比如笔记本电脑、台式电脑）上的组件和网格。</p><h3>移动设备优先策略</h3><ul class="list-group"><li class="list-group-item"><strong>内容</strong> <ul class="list-group"><li class="list-group-item">决定什么是最重要的。</li></ul></li><li class="list-group-item"><strong>布局</strong> <ul class="list-group"><li class="list-group-item">优先设计更小的宽度。</li><li class="list-group-item">基础的 CSS 是移动设备优先，媒体查询是针对于平板电脑、台式电脑。</li></ul></li><li class="list-group-item"><strong>渐进增强</strong> <ul class="list-group"><li class="list-group-item">随着屏幕大小的增加而添加元素。</li></ul></li></ul><p>响应式网格系统随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。</p><table class="grid" cellspacing="0"><tbody><tr class="firstRow"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td colspan="4">4</td><td colspan="4">4</td><td colspan="4">4</td></tr><tr><td colspan="4">4</td><td colspan="8">8</td></tr><tr><td colspan="6">6</td><td colspan="6">6</td></tr><tr><td colspan="12">12</td></tr></tbody></table><p><br/></p><h2 class="tutheader">Bootstrap 网格系统（Grid System）的工作原理</h2><p>网格系统通过一系列包含内容的行和列来创建页面布局。下面列出了 Bootstrap 网格系统是如何工作的：</p><ul class="list-group"><li class="list-group-item">行必须放置在 <strong>.container</strong> class 内，以便获得适当的对齐（alignment）和内边距（padding）。</li><li class="list-group-item">使用行来创建列的水平组。</li><li class="list-group-item">内容应该放置在列内，且唯有列可以是行的直接子元素。</li><li class="list-group-item">预定义的网格类，比如 <strong>.row</strong> 和 <strong>.col-xs-4</strong>，可用于快速创建网格布局。LESS 混合类可用于更多语义布局。</li><li class="list-group-item">列通过内边距（padding）来创建列内容之间的间隙。该内边距是通过 <strong>.rows</strong> 上的外边距（margin）取负，表示第一列和最后一列的行偏移。</li><li class="list-group-item">网格系统是通过指定您想要横跨的十二个可用的列来创建的。例如，要创建三个相等的列，则使用三个 <strong>.col-xs-4</strong>。</li></ul><h2 class="tutheader">媒体查询</h2><p>媒体查询是非常别致的&quot;有条件的 CSS 规则&quot;。它只适用于一些基于某些规定条件的 CSS。如果满足那些条件，则应用相应的样式。</p><p>Bootstrap 中的媒体查询允许您基于视口大小移动、显示并隐藏内容。下面的媒体查询在 LESS 文件中使用，用来创建 Bootstrap 网格系统中的关键的分界点阈值。</p><pre class="prettyprint">/*&nbsp;超小设备（手机，小于&nbsp;768px）&nbsp;*/
+/*&nbsp;Bootstrap&nbsp;中默认情况下没有媒体查询&nbsp;*/
+
+/*&nbsp;小型设备（平板电脑，768px&nbsp;起）&nbsp;*/
+@media&nbsp;(min-width:&nbsp;@screen-sm-min)&nbsp;{&nbsp;...&nbsp;}
+
+/*&nbsp;中型设备（台式电脑，992px&nbsp;起）&nbsp;*/
+@media&nbsp;(min-width:&nbsp;@screen-md-min)&nbsp;{&nbsp;...&nbsp;}
+
+/*&nbsp;大型设备（大台式电脑，1200px&nbsp;起）&nbsp;*/
+@media&nbsp;(min-width:&nbsp;@screen-lg-min)&nbsp;{&nbsp;...&nbsp;}</pre><p><br/></p><p>我们有时候也会在媒体查询代码中包含 <strong>max-width</strong>，从而将 CSS 的影响限制在更小范围的屏幕大小之内。</p><pre class="prettyprint">@media&nbsp;(max-width:&nbsp;@screen-xs-max)&nbsp;{&nbsp;...&nbsp;}
+@media&nbsp;(min-width:&nbsp;@screen-sm-min)&nbsp;and&nbsp;(max-width:&nbsp;@screen-sm-max)&nbsp;{&nbsp;...&nbsp;}
+@media&nbsp;(min-width:&nbsp;@screen-md-min)&nbsp;and&nbsp;(max-width:&nbsp;@screen-md-max)&nbsp;{&nbsp;...&nbsp;}
+@media&nbsp;(min-width:&nbsp;@screen-lg-min)&nbsp;{&nbsp;...&nbsp;}</pre><p><br/></p><p>媒体查询有两个部分，先是一个设备规范，然后是一个大小规则。在上面的案例中，设置了下列的规则：</p><p>让我们来看下面这行代码：</p><pre class="prettyprint">@media&nbsp;(min-width:&nbsp;@screen-sm-min)&nbsp;and&nbsp;(max-width:&nbsp;@screen-sm-max)&nbsp;{&nbsp;...&nbsp;}</pre><p><br/></p><p>对于所有带有 <em>min-width: @screen-sm-min</em> 的设备，如果屏幕的宽度小于 <em>@screen-sm-max</em>，则会进行一些处理。</p><h2 class="tutheader">网格选项</h2><p>下表总结了 Bootstrap 网格系统如何跨多个设备工作：</p><table class="reference notranslate"><tbody><tr class="firstRow"><th><br/></th><th>超小设备手机（&lt;768px）</th><th>小型设备平板电脑（≥768px）</th><th>中型设备台式电脑（≥992px）</th><th>大型设备台式电脑（≥1200px）</th></tr><tr><td>网格行为</td><td>一直是水平的</td><td>以折叠开始，断点以上是水平的</td><td>以折叠开始，断点以上是水平的</td><td>以折叠开始，断点以上是水平的</td></tr><tr><td>最大容器宽度</td><td>None (auto)</td><td>750px</td><td>970px</td><td>1170px</td></tr><tr><td>Class 前缀</td><td><strong>.col-xs-</strong></td><td><strong>.col-sm-</strong></td><td><strong>.col-md-</strong></td><td><strong>.col-lg-</strong></td></tr><tr><td>列 #</td><td>12</td><td>12</td><td>12</td><td>12</td></tr><tr><td>最大列宽</td><td>Auto</td><td>60px</td><td>78px</td><td>95px</td></tr><tr><td>间隙宽度</td><td>30px<br/>（一个列的每边分别 15px）</td><td>30px<br/>（一个列的每边分别 15px）</td><td>30px<br/>（一个列的每边分别 15px）</td><td>30px<br/>（一个列的每边分别 15px）</td></tr><tr><td>可嵌套</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>偏移量</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>列排序</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr></tbody></table><h3>基本的网格结构</h3><p>下面是 Bootstrap 网格的基本结构：</p><pre class="prettyprint">&lt;div&nbsp;class=&quot;container&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;row&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-*-*&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-*-*&quot;&gt;&lt;/div&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;row&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;container&quot;&gt;....</pre><p><br/></p><p>让我们来看几个简单的网格实例：</p><ul class="list-group"><li class="list-group-item"><a textvalue="实例：堆叠的水平" target="_self" href="/api/view/a/820"><strong>实例：堆叠的水平</strong></a></li><li class="list-group-item"><a textvalue="实例：中型和大型设备" target="_self" href="/api/view/a/821"><strong>实例：中型和大型设备</strong></a></li><li class="list-group-item"><a textvalue="实例：手机、平板电脑、台式电脑" target="_self" href="/api/view/a/822"><strong>实例：手机、平板电脑、台式电脑</strong></a></li></ul><h2 class="tutheader">响应式的列重置</h2><p>以下实例包含了4个网格，但是我们在小设备浏览时无法确定网格显示的位置。</p><p>为了解决这个问题，使用 可以使用 <strong>.clearfix</strong> class和 <a textvalue="响应式实用工具" target="_self" href="/api/view/a/783">响应式实用工具</a>来解决，如下面实例所示：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;响应式的列重置&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;container&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;row&quot;&nbsp;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-xs-6&nbsp;col-sm-3&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;background-color:&nbsp;#dedef8;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-xs-6&nbsp;col-sm-3&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;background-color:&nbsp;#dedef8;box-shadow:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipisicing&nbsp;elit,&nbsp;sed&nbsp;do&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eiusmod&nbsp;tempor&nbsp;incididunt&nbsp;ut&nbsp;labore&nbsp;et&nbsp;dolore&nbsp;magna&nbsp;aliqua.&nbsp;Ut&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enim&nbsp;ad&nbsp;minim&nbsp;veniam,&nbsp;quis&nbsp;nostrud&nbsp;exercitation&nbsp;ullamco&nbsp;laboris&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nisi&nbsp;ut&nbsp;aliquip&nbsp;ex&nbsp;ea&nbsp;commodo&nbsp;consequat.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipisicing&nbsp;elit,&nbsp;sed&nbsp;do&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eiusmod&nbsp;tempor&nbsp;incididunt&nbsp;ut.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;clearfix&nbsp;visible-xs&quot;&gt;&lt;/div&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-xs-6&nbsp;col-sm-3&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;background-color:&nbsp;#dedef8;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Ut&nbsp;enim&nbsp;ad&nbsp;minim&nbsp;veniam,&nbsp;quis&nbsp;nostrud&nbsp;exercitation&nbsp;ullamco&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;laboris&nbsp;nisi&nbsp;ut&nbsp;aliquip&nbsp;ex&nbsp;ea&nbsp;commodo&nbsp;consequat.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-xs-6&nbsp;col-sm-3&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;background-color:&nbsp;#dedef8;box-shadow:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipisicing&nbsp;elit,&nbsp;sed&nbsp;do&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eiusmod&nbsp;tempor&nbsp;incididunt&nbsp;ut&nbsp;labore&nbsp;et&nbsp;dolore&nbsp;magna&nbsp;aliqua.&nbsp;Ut&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enim&nbsp;ad&nbsp;minim&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p><a target="_self" href="http://www.shouce.ren/study/api/s/1749"><button class="btn btn-success">效果预览 »</button></a></p><p>浏览器上调整窗口大小查看变化，或在您手机上查看效果。</p><h2 class="tutheader">偏移列</h2><p>偏移是一个用于更专业的布局的有用功能。它们可用来给列腾出更多的空间。例如，<strong>.col-xs=*</strong> 类不支持偏移，但是它们可以简单地通过使用一个空的单元格来实现该效果。</p><p>为了在大屏幕显示器上使用偏移，请使用 <strong>.col-md-offset-*</strong> 类。这些类会把一个列的左外边距（margin）增加 <strong>*</strong> 列，其中 <strong>*</strong> 范围是从 <strong>1</strong> 到 <strong>11</strong>。</p><p>在下面的实例中，我们有 &lt;div class=&quot;col-md-6&quot;&gt;..&lt;/div&gt;，我们将使用 <strong>.col-md-offset-3</strong> class 来居中这个 div。</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;偏移列&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;container&quot;&gt;
+
+&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello,&nbsp;world!&lt;/h1&gt;
+
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;row&quot;&nbsp;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-xs-6&nbsp;col-md-offset-3&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;background-color:&nbsp;#dedef8;box-shadow:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipisicing&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elit.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p><a href="http://www.shouce.ren/study/api/s/1328" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab0189e5dc.jpg" alt="网格系统偏移列"/></div><p><br/></p><h2 class="tutheader">嵌套列</h2><p>为了在内容中嵌套默认的网格，请添加一个新的 <strong>.row</strong>，并在一个已有的 <strong>.col-md-*</strong> 列内添加一组 <strong>.col-md-*</strong> 列。被嵌套的行应包含一组列，这组列个数不能超过12（其实，没有要求你必须占满12列）。</p><p>在下面的实例中，布局有两个列，第二列被分为两行四个盒子。</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;嵌套列&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;container&quot;&gt;
+
+&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello,&nbsp;world!&lt;/h1&gt;
+
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;row&quot;&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md-3&quot;&nbsp;style=&quot;background-color:&nbsp;#dedef8;box-shadow:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&gt;第一列&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md-9&quot;&nbsp;style=&quot;background-color:&nbsp;#dedef8;box-shadow:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&gt;第二列&nbsp;-&nbsp;分为四个盒子&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;row&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md-6&quot;&nbsp;style=&quot;background-color:&nbsp;#B18904;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Consectetur&nbsp;art&nbsp;party&nbsp;Tonx&nbsp;culpa&nbsp;semiotics.&nbsp;Pinterest&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assumenda&nbsp;minim&nbsp;organic&nbsp;quis.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md-6&quot;&nbsp;style=&quot;background-color:&nbsp;#B18904;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&nbsp;sed&nbsp;do&nbsp;eiusmod&nbsp;tempor&nbsp;incididunt&nbsp;ut&nbsp;labore&nbsp;et&nbsp;dolore&nbsp;magna&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aliqua.&nbsp;Ut&nbsp;enim&nbsp;ad&nbsp;minim&nbsp;veniam,&nbsp;quis&nbsp;nostrud&nbsp;exercitation&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ullamco&nbsp;laboris&nbsp;nisi&nbsp;ut&nbsp;aliquip&nbsp;ex&nbsp;ea&nbsp;commodo&nbsp;consequat.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;row&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md-6&quot;&nbsp;style=&quot;background-color:&nbsp;#B18904;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;quis&nbsp;nostrud&nbsp;exercitation&nbsp;ullamco&nbsp;laboris&nbsp;nisi&nbsp;ut&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aliquip&nbsp;ex&nbsp;ea&nbsp;commodo&nbsp;consequat.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md-6&quot;&nbsp;style=&quot;background-color:&nbsp;#B18904;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipisicing&nbsp;elit,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sed&nbsp;do&nbsp;eiusmod&nbsp;tempor&nbsp;incididunt&nbsp;ut&nbsp;labore&nbsp;et&nbsp;dolore&nbsp;magna&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aliqua.&nbsp;Ut&nbsp;enim&nbsp;ad&nbsp;minim.&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p><a href="http://www.shouce.ren/study/api/s/1329" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab018b8faa.jpg" alt="网格系统嵌套列"/></div><p><br/></p><h2 class="tutheader">列排序</h2><p>Bootstrap 网格系统另一个完美的特性，就是您可以很容易地以一种顺序编写列，然后以另一种顺序显示列。</p><p>您可以很轻易地改变带有 <strong>.col-md-push-*</strong> 和 <strong>.col-md-pull-*</strong> 类的内置网格列的顺序，其中 <strong>*</strong> 范围是从 <strong>1</strong> 到 <strong>11</strong>。</p><p>在下面的实例中，我们有两列布局，左列很窄，作为侧边栏。我们将使用 <strong>.col-md-push-*</strong> 和 <strong>.col-md-pull-*</strong> 类来互换这两列的顺序。</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;列排序&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;container&quot;&gt;
+
+&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello,&nbsp;world!&lt;/h1&gt;
+
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;row&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;排序前&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md-4&quot;&nbsp;style=&quot;background-color:&nbsp;#dedef8;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我在左边
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md-8&quot;&nbsp;style=&quot;background-color:&nbsp;#dedef8;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我在右边
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;&lt;br&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;row&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;排序后&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md-4&nbsp;col-md-push-8&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;background-color:&nbsp;#dedef8;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我在左边
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md-8&nbsp;col-md-pull-4&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;background-color:&nbsp;#dedef8;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:&nbsp;inset&nbsp;1px&nbsp;-1px&nbsp;1px&nbsp;#444,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inset&nbsp;-1px&nbsp;1px&nbsp;1px&nbsp;#444;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我在右边
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p><a target="_blank" href="http://www.shouce.ren/study/api/s/1750"><button class="btn btn-success">效果预览 »</button></a><br/></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab019073f9.jpg" alt="网格系统排序列"/></div>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

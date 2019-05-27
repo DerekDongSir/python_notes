@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 轮播（Carousel）</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 轮播（Carousel）</h1>
+	<hr>
+		<p>Bootstrap 轮播（Carousel）插件是一种灵活的响应式的向站点添加滑块的方式。除此之外，内容也是足够灵活的，可以是图像、内嵌框架、视频或者其他您想要放置的任何类型的内容。</p><blockquote><img src="../image/560ab01874dc2.png"/>如果您想要单独引用该插件的功能，那么您需要引用 <strong>carousel.js</strong>。或者，正如 Bootstrap 插件概览 一章中所提到，您可以引用 <em>bootstrap.js</em> 或压缩版的 <em>bootstrap.min.js</em>。</blockquote><h2>实例</h2><p>下面是一个简单的幻灯片，使用 Bootstrap 轮播（Carousel）插件显示了一个循环播放元素的通用组件。为了实现轮播，您只需要添加带有该标记的代码即可。不需要使用 data 属性，只需要简单的基于 class 的开发即可。</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;简单的轮播（Carousel）插件&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;id=&quot;myCarousel&quot;&nbsp;class=&quot;carousel&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）指标&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;ol&nbsp;class=&quot;carousel-indicators&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;0&quot;&nbsp;class=&quot;active&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;1&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;/ol&gt;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）项目&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;carousel-inner&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide1.png&quot;&nbsp;alt=&quot;First&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide2.png&quot;&nbsp;alt=&quot;Second&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide3.png&quot;&nbsp;alt=&quot;Third&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）导航&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;class=&quot;carousel-control&nbsp;left&quot;&nbsp;href=&quot;#myCarousel&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-slide=&quot;prev&quot;&gt;&amp;lsaquo;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;class=&quot;carousel-control&nbsp;right&quot;&nbsp;href=&quot;#myCarousel&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-slide=&quot;next&quot;&gt;&amp;rsaquo;&lt;/a&gt;
+&lt;/div&gt;&nbsp;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1740" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab30dbc39d.jpg" alt="简单的轮播（Carousel）插件"/></div><h3>可选的标题</h3><p>您可以通过 <strong>.item</strong> 内的 <strong>.carousel-caption</strong> 元素向幻灯片添加标题。只需要在该处放置任何可选的 HTML 即可，它会自动对齐并格式化。下面的实例演示了这点：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;轮播（Carousel）插件的标题&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;id=&quot;myCarousel&quot;&nbsp;class=&quot;carousel&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）指标&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;ol&nbsp;class=&quot;carousel-indicators&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;0&quot;&nbsp;class=&quot;active&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;1&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;/ol&gt;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）项目&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;carousel-inner&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide1.png&quot;&nbsp;alt=&quot;First&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;carousel-caption&quot;&gt;标题&nbsp;1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide2.png&quot;&nbsp;alt=&quot;Second&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;carousel-caption&quot;&gt;标题&nbsp;2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide3.png&quot;&nbsp;alt=&quot;Third&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;carousel-caption&quot;&gt;标题&nbsp;3&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）导航&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;class=&quot;carousel-control&nbsp;left&quot;&nbsp;href=&quot;#myCarousel&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-slide=&quot;prev&quot;&gt;&amp;lsaquo;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;class=&quot;carousel-control&nbsp;right&quot;&nbsp;href=&quot;#myCarousel&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-slide=&quot;next&quot;&gt;&amp;rsaquo;&lt;/a&gt;
+&lt;/div&gt;&nbsp;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1741" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab30ddbf74.jpg" alt="轮播（Carousel）插件的标题"/></div><h2>用法</h2><ul class="list-group"><li class="list-group-item"><strong>通过 data 属性</strong>：使用 data 属性可以很容易控制轮播（Carousel）的位置。<ul class="list-group"><li class="list-group-item">属性 <strong>data-slide</strong> 接受关键字 <em>prev</em> 或 <em>next</em>，用来改变幻灯片相对于当前位置的位置。</li><li class="list-group-item">使用 <strong>data-slide-to</strong> 来向轮播床底一个原始滑动索引，<strong>data-slide-to=&quot;2&quot;</strong> 将把滑块移动到一个特定的索引，索引从 0 开始计数。</li><li class="list-group-item"><strong>data-ride=&quot;carousel&quot;</strong> 属性用于标记轮播在页面加载时就开始动画播放。</li></ul></li><li class="list-group-item"><strong>通过 JavaScript</strong>：轮播（Carousel）可通过 JavaScript 手动调用，如下所示： <pre class="prettyprint">$(&#39;.carousel&#39;).carousel()</pre></li></ul><h2>选项</h2><p>有一些选项是通过 data 属性或 JavaScript 来传递的。下表列出了这些选项：</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>选项名称</th><th>类型/默认值</th><th>Data 属性名称</th><th>描述</th></tr><tr><td>interval</td><td>number<br/><em>默认值：5000</em></td><td>data-interval</td><td>自动循环每个项目之间延迟的时间量。如果为 false，轮播将不会自动循环。</td></tr><tr><td>pause</td><td>string<br/><em>默认值：&quot;hover&quot;</em></td><td>data-pause</td><td>鼠标进入时暂停轮播循环，鼠标离开时恢复轮播循环。</td></tr><tr><td>wrap</td><td>boolean<br/><em>默认值：true</em></td><td>data-wrap</td><td>轮播是否连续循环。</td></tr></tbody></table><h2>方法</h2><p>下面是一些轮播（Carousel）插件中有用的方法：</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>方法</th><th>描述</th><th>实例</th></tr><tr><td>.carousel(options)</td><td>初始化轮播为可选的 options 对象，并开始循环项目。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).carousel({
+&nbsp;&nbsp;interval:&nbsp;2000
+})</pre></td></tr><tr><td>.carousel(&#39;cycle&#39;)</td><td>从左到右循环轮播项目。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).carousel(&#39;cycle&#39;)</pre></td></tr><tr><td>.carousel(&#39;pause&#39;)</td><td>停止轮播循环项目。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;)..carousel(&#39;pause&#39;)</pre></td></tr><tr><td>.carousel(number)</td><td>循环轮播到某个特定的帧（从 0 开始计数，与数组类似）。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).carousel(number)</pre></td></tr><tr><td>.carousel(&#39;prev&#39;)</td><td>循环轮播到上一个项目。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).carousel(&#39;prev&#39;)</pre></td></tr><tr><td>.carousel(&#39;next&#39;)</td><td>循环轮播到下一个项目。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).carousel(&#39;next&#39;)</pre></td></tr></tbody></table><h3>实例</h3><p>下面的实例演示了方法的用法：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;轮播（Carousel）插件方法&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;id=&quot;myCarousel&quot;&nbsp;class=&quot;carousel&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）指标&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;ol&nbsp;class=&quot;carousel-indicators&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;0&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class=&quot;active&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;1&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;/ol&gt;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）项目&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;carousel-inner&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide1.png&quot;&nbsp;alt=&quot;First&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide2.png&quot;&nbsp;alt=&quot;Second&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide3.png&quot;&nbsp;alt=&quot;Third&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）导航&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;class=&quot;carousel-control&nbsp;left&quot;&nbsp;href=&quot;#myCarousel&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-slide=&quot;prev&quot;&gt;&amp;lsaquo;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;class=&quot;carousel-control&nbsp;right&quot;&nbsp;href=&quot;#myCarousel&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-slide=&quot;next&quot;&gt;&amp;rsaquo;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;控制按钮&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;style=&quot;text-align:center;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;start-slide&quot;&nbsp;value=&quot;Start&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;pause-slide&quot;&nbsp;value=&quot;Pause&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;prev-slide&quot;&nbsp;value=&quot;Previous&nbsp;Slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;next-slide&quot;&nbsp;value=&quot;Next&nbsp;Slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;slide-one&quot;&nbsp;value=&quot;Slide&nbsp;1&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;slide-two&quot;&nbsp;value=&quot;Slide&nbsp;2&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;slide-three&quot;&nbsp;value=&quot;Slide&nbsp;3&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;&nbsp;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;初始化轮播
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.start-slide&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myCarousel&quot;).carousel(&#39;cycle&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;停止轮播
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.pause-slide&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myCarousel&quot;).carousel(&#39;pause&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;循环轮播到上一个项目
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.prev-slide&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myCarousel&quot;).carousel(&#39;prev&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;循环轮播到下一个项目
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.next-slide&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myCarousel&quot;).carousel(&#39;next&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;循环轮播到某个特定的帧&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.slide-one&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myCarousel&quot;).carousel(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.slide-two&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myCarousel&quot;).carousel(1);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.slide-three&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myCarousel&quot;).carousel(2);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1742" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab30e0afbc.jpg" alt="轮播（Carousel）插件方法"/></div><h2>事件</h2><p>下表列出了轮播（Carousel）插件中要用到的事件。这些事件可在函数中当钩子使用。</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>事件</th><th>描述</th><th>实例</th></tr><tr><td>slide.bs.carousel</td><td>当调用 slide 实例方法时立即触发该事件。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).on(&#39;slide.bs.carousel&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr><tr><td>slid.bs.carousel</td><td>当轮播完成幻灯片过渡效果时触发该事件。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).on(&#39;slid.bs.carousel&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr></tbody></table><h3>实例</h3><p>下面的实例演示了事件的用法：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;轮播（Carousel）插件事件&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;id=&quot;myCarousel&quot;&nbsp;class=&quot;carousel&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）指标&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;ol&nbsp;class=&quot;carousel-indicators&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;0&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class=&quot;active&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;1&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-target=&quot;#myCarousel&quot;&nbsp;data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;/ol&gt;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）项目&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;carousel-inner&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide1.png&quot;&nbsp;alt=&quot;First&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide2.png&quot;&nbsp;alt=&quot;Second&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;/wp-content/uploads/2014/07/slide3.png&quot;&nbsp;alt=&quot;Third&nbsp;slide&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;轮播（Carousel）导航&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;class=&quot;carousel-control&nbsp;left&quot;&nbsp;href=&quot;#myCarousel&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-slide=&quot;prev&quot;&gt;&amp;lsaquo;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;class=&quot;carousel-control&nbsp;right&quot;&nbsp;href=&quot;#myCarousel&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-slide=&quot;next&quot;&gt;&amp;rsaquo;&lt;/a&gt;
+&lt;/div&gt;&nbsp;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&#39;#myCarousel&#39;).on(&#39;slide.bs.carousel&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&quot;当调用&nbsp;slide&nbsp;实例方法时立即触发该事件。&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1743" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab30e2ab94.jpg" alt="轮播（Carousel）插件事件"/></div>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

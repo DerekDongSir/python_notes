@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 折叠（Collapse）</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 折叠（Collapse）</h1>
+	<hr>
+		<p>折叠（Collapse）插件可以很容易地让页面区域折叠起来。无论您用它来创建折叠导航还是内容面板，它都允许很多内容选项。</p><blockquote><img src="../image/560ab01874dc2.png"/>如果您想要单独引用该插件的功能，那么您需要引用 <strong>collapse.js</strong>。同时，也需要在您的 Bootstrap 版本中引用 <a textvalue="Transition（过渡）插件" target="_self" href="/api/view/a/805">Transition（过渡）插件</a>。或者，正如 Bootstrap 插件概览 一章中所提到，您可以引用 <em>bootstrap.js</em> 或压缩版的 <em>bootstrap.min.js</em>。</blockquote><p>您可以使用折叠（Collapse）插件：</p><ul class="list-group"><li class="list-group-item"><em><strong>创建可折叠的分组或折叠面板（accordion）</strong></em>，如下所示： <pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;折叠面板&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;panel-group&quot;&nbsp;id=&quot;accordion&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel&nbsp;panel-default&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;panel-title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;data-toggle=&quot;collapse&quot;&nbsp;data-parent=&quot;#accordion&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;#collapseOne&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击我进行展开，再次点击我进行折叠。第&nbsp;1&nbsp;部分
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;collapseOne&quot;&nbsp;class=&quot;panel-collapse&nbsp;collapse&nbsp;in&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nihil&nbsp;anim&nbsp;keffiyeh&nbsp;helvetica,&nbsp;craft&nbsp;beer&nbsp;labore&nbsp;wes&nbsp;anderson&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cred&nbsp;nesciunt&nbsp;sapiente&nbsp;ea&nbsp;proident.&nbsp;Ad&nbsp;vegan&nbsp;excepteur&nbsp;butcher&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vice&nbsp;lomo.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel&nbsp;panel-default&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;panel-title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;data-toggle=&quot;collapse&quot;&nbsp;data-parent=&quot;#accordion&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;#collapseTwo&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击我进行展开，再次点击我进行折叠。第&nbsp;2&nbsp;部分
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;collapseTwo&quot;&nbsp;class=&quot;panel-collapse&nbsp;collapse&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nihil&nbsp;anim&nbsp;keffiyeh&nbsp;helvetica,&nbsp;craft&nbsp;beer&nbsp;labore&nbsp;wes&nbsp;anderson&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cred&nbsp;nesciunt&nbsp;sapiente&nbsp;ea&nbsp;proident.&nbsp;Ad&nbsp;vegan&nbsp;excepteur&nbsp;butcher&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vice&nbsp;lomo.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel&nbsp;panel-default&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;panel-title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;data-toggle=&quot;collapse&quot;&nbsp;data-parent=&quot;#accordion&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;#collapseThree&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击我进行展开，再次点击我进行折叠。第&nbsp;3&nbsp;部分
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;collapseThree&quot;&nbsp;class=&quot;panel-collapse&nbsp;collapse&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nihil&nbsp;anim&nbsp;keffiyeh&nbsp;helvetica,&nbsp;craft&nbsp;beer&nbsp;labore&nbsp;wes&nbsp;anderson&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cred&nbsp;nesciunt&nbsp;sapiente&nbsp;ea&nbsp;proident.&nbsp;Ad&nbsp;vegan&nbsp;excepteur&nbsp;butcher&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vice&nbsp;lomo.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre> <p><a href="http://www.shouce.ren/study/api/s/1734" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2ff8fd69.jpg" alt="折叠面板"/></div><ol class="list"><li><strong>data-toggle=&quot;collapse&quot;</strong> 添加到您想要展开或折叠的组件的链接上。</li><li><strong>href</strong> 或 <strong>data-target</strong> 属性添加到父组件，它的值是子组件的 <em>id</em>。</li><li><strong>data-parent</strong> 属性把折叠面板（accordion）的 id 添加到要展开或折叠的组件的链接上。</li></ol></li><li class="list-group-item"><em><strong>创建不带 accordion 标记的简单的可折叠组件（collapsible）</strong></em>，如下所示： <pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;简单的可折叠组件&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&nbsp;data-toggle=&quot;collapse&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;data-target=&quot;#demo&quot;&gt;
+&nbsp;&nbsp;&nbsp;简单的可折叠组件
+&lt;/button&gt;
+
+&lt;div&nbsp;id=&quot;demo&quot;&nbsp;class=&quot;collapse&nbsp;in&quot;&gt;
+&nbsp;&nbsp;Nihil&nbsp;anim&nbsp;keffiyeh&nbsp;helvetica,&nbsp;craft&nbsp;beer&nbsp;labore&nbsp;wes&nbsp;anderson&nbsp;
+&nbsp;&nbsp;cred&nbsp;nesciunt&nbsp;sapiente&nbsp;ea&nbsp;proident.&nbsp;Ad&nbsp;vegan&nbsp;excepteur&nbsp;butcher&nbsp;
+&nbsp;&nbsp;vice&nbsp;lomo.
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre> <p><a href="http://www.shouce.ren/study/api/s/1735" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2ffc02e5.jpg" alt="简单的可折叠组件"/></div><p>正如您在实例中看到的，我们创建了一个可折叠的组件，与折叠面板（accordion）不同，我们没有添加属性 <strong>data-parent</strong>。</p></li></ul><h2>用法</h2><p>下表列出了折叠（Collapse）插件用于处理繁重的伸缩的 class：</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>Class</th><th>描述</th><th>实例</th></tr><tr><td>.collapse</td><td>隐藏内容。</td><td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1736">实例 »</a></td></tr><tr><td>.collapse.in</td><td>显示内容。</td><td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1737">实例 »</a></td></tr><tr><td>.collapsing</td><td>当过渡效果开始时被添加，当过渡效果完成时被移除。</td><td>&nbsp;</td></tr></tbody></table><p>您可以通过以下两种方式使用折叠（Collapse）插件：</p><ul class="list-group"><li class="list-group-item"><strong>通过 data 属性</strong>：向元素添加 <strong>data-toggle=&quot;collapse&quot;</strong> 和 <strong>data-target</strong>，自动分配可折叠元素的控制。<strong>data-target</strong> 属性接受一个 CSS 选择器，并会对其应用折叠效果。请确保向可折叠元素添加 class <strong>.collapse</strong>。如果您希望它默认情况下是打开的，请添加额外的 class <strong>.in</strong>。<p>为了向可折叠控件添加类似折叠面板的分组管理，请添加 data 属性 <strong>data-parent=&quot;#selector&quot;</strong>。</p></li><li class="list-group-item"><strong>通过 JavaScript</strong>：可通过 JavaScript 激活 collapse 方法，如下所示： <pre class="prettyprint">$(&#39;.collapse&#39;).collapse()</pre></li></ul><h2>选项</h2><p>有一些选项是通过 data 属性或 JavaScript 来传递的。下表列出了这些选项：</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>选项名称</th><th>类型/默认值</th><th>Data 属性名称</th><th>描述</th></tr><tr><td>parent</td><td>selector<br/><em>默认值：false</em></td><td>data-parent</td><td>如果提供了一个选择器，当可折叠项目显示时，指定父元素下的所有可折叠的元素将被关闭。这与创痛的折叠面板（accordion）的行为类似 - 这依赖于 accordion-group 类。</td></tr><tr><td>toggle</td><td>boolean<br/><em>默认值：true</em></td><td>data-toggle</td><td>切换调用可折叠元素。</td></tr></tbody></table><h2>方法</h2><p>下面是一些折叠（Collapse）插件中有用的方法：</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>方法</th><th>描述</th><th>实例</th></tr><tr><td><strong>Options:</strong> .collapse(options)</td><td>激活内容为可折叠元素。接受一个可选的 options 对象。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).collapse({
+&nbsp;&nbsp;toggle:&nbsp;false
+})</pre></td></tr><tr><td><strong>Toggle:</strong> .collapse(&#39;toggle&#39;)</td><td>切换显示/隐藏可折叠元素。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).collapse(&#39;toggle&#39;)</pre></td></tr><tr><td><strong>Show:</strong> .collapse(&#39;show&#39;)</td><td>显示可折叠元素。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).collapse(&#39;show&#39;)</pre></td></tr><tr><td><strong>Hide:</strong> .collapse(&#39;hide&#39;)</td><td>隐藏可折叠元素。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).collapse(&#39;hide&#39;)</pre></td></tr></tbody></table><h3>实例</h3><p>下面的实例演示了方法的用法：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;折叠（Collapse）插件方法&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;panel-group&quot;&nbsp;id=&quot;accordion&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel&nbsp;panel-default&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;panel-title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;data-toggle=&quot;collapse&quot;&nbsp;data-parent=&quot;#accordion&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;#collapseOne&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击我进行展开，再次点击我进行折叠。第&nbsp;1&nbsp;部分--hide&nbsp;方法
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;collapseOne&quot;&nbsp;class=&quot;panel-collapse&nbsp;collapse&nbsp;in&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nihil&nbsp;anim&nbsp;keffiyeh&nbsp;helvetica,&nbsp;craft&nbsp;beer&nbsp;labore&nbsp;wes&nbsp;anderson&nbsp;cred&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nesciunt&nbsp;sapiente&nbsp;ea&nbsp;proident.&nbsp;Ad&nbsp;vegan&nbsp;excepteur&nbsp;butcher&nbsp;vice&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lomo.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel&nbsp;panel-success&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;panel-title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;data-toggle=&quot;collapse&quot;&nbsp;data-parent=&quot;#accordion&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;#collapseTwo&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击我进行展开，再次点击我进行折叠。第&nbsp;2&nbsp;部分--show&nbsp;方法
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;collapseTwo&quot;&nbsp;class=&quot;panel-collapse&nbsp;collapse&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nihil&nbsp;anim&nbsp;keffiyeh&nbsp;helvetica,&nbsp;craft&nbsp;beer&nbsp;labore&nbsp;wes&nbsp;anderson&nbsp;cred&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nesciunt&nbsp;sapiente&nbsp;ea&nbsp;proident.&nbsp;Ad&nbsp;vegan&nbsp;excepteur&nbsp;butcher&nbsp;vice&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lomo.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel&nbsp;panel-info&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;panel-title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;data-toggle=&quot;collapse&quot;&nbsp;data-parent=&quot;#accordion&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;#collapseThree&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击我进行展开，再次点击我进行折叠。第&nbsp;3&nbsp;部分--toggle&nbsp;方法
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;collapseThree&quot;&nbsp;class=&quot;panel-collapse&nbsp;collapse&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nihil&nbsp;anim&nbsp;keffiyeh&nbsp;helvetica,&nbsp;craft&nbsp;beer&nbsp;labore&nbsp;wes&nbsp;anderson&nbsp;cred&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nesciunt&nbsp;sapiente&nbsp;ea&nbsp;proident.&nbsp;Ad&nbsp;vegan&nbsp;excepteur&nbsp;butcher&nbsp;vice&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lomo.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel&nbsp;panel-warning&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;panel-title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;data-toggle=&quot;collapse&quot;&nbsp;data-parent=&quot;#accordion&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;#collapseFour&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击我进行展开，再次点击我进行折叠。第&nbsp;4&nbsp;部分--options&nbsp;方法
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;collapseFour&quot;&nbsp;class=&quot;panel-collapse&nbsp;collapse&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nihil&nbsp;anim&nbsp;keffiyeh&nbsp;helvetica,&nbsp;craft&nbsp;beer&nbsp;labore&nbsp;wes&nbsp;anderson&nbsp;cred&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nesciunt&nbsp;sapiente&nbsp;ea&nbsp;proident.&nbsp;Ad&nbsp;vegan&nbsp;excepteur&nbsp;butcher&nbsp;vice&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lomo.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&nbsp;type=&quot;text/javascript&quot;&gt;
+&nbsp;&nbsp;&nbsp;$(function&nbsp;()&nbsp;{&nbsp;$(&#39;#collapseFour&#39;).collapse({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toggle:&nbsp;false
+&nbsp;&nbsp;&nbsp;})});
+&nbsp;&nbsp;&nbsp;$(function&nbsp;()&nbsp;{&nbsp;$(&#39;#collapseTwo&#39;).collapse(&#39;show&#39;)});
+&nbsp;&nbsp;&nbsp;$(function&nbsp;()&nbsp;{&nbsp;$(&#39;#collapseThree&#39;).collapse(&#39;toggle&#39;)});
+&nbsp;&nbsp;&nbsp;$(function&nbsp;()&nbsp;{&nbsp;$(&#39;#collapseOne&#39;).collapse(&#39;hide&#39;)});
+&lt;/script&gt;&nbsp;&nbsp;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1738" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2ffe6066.jpg" alt="折叠（Collapse）插件方法"/></div><h2>事件</h2><p>下表列出了折叠（Collapse）插件中要用到的事件。这些事件可在函数中当钩子使用。</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>事件</th><th>描述</th><th>实例</th></tr><tr><td>show.bs.collapse</td><td>在调用 show 方法后触发该事件。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).on(&#39;show.bs.collapse&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr><tr><td>shown.bs.collapse</td><td>当折叠元素对用户可见时触发该事件（将等待 CSS 过渡效果完成）。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).on(&#39;shown.bs.collapse&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr><tr><td>hide.bs.collapse</td><td>当调用 hide 实例方法时立即触发该事件。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).on(&#39;hide.bs.collapse&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr><tr><td>hidden.bs.collapse</td><td>当折叠元素对用户隐藏时触发该事件（将等待 CSS 过渡效果完成）。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).on(&#39;hidden.bs.collapse&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr></tbody></table><h3>实例</h3><p>下面的实例演示了事件的用法：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;折叠（Collapse）插件事件&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;panel-group&quot;&nbsp;id=&quot;accordion&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel&nbsp;panel-info&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;panel-title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;data-toggle=&quot;collapse&quot;&nbsp;data-parent=&quot;#accordion&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;#collapseexample&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击我进行展开，再次点击我进行折叠。--shown&nbsp;事件
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;collapseexample&quot;&nbsp;class=&quot;panel-collapse&nbsp;collapse&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nihil&nbsp;anim&nbsp;keffiyeh&nbsp;helvetica,&nbsp;craft&nbsp;beer&nbsp;labore&nbsp;wes&nbsp;anderson&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cred&nbsp;nesciunt&nbsp;sapiente&nbsp;ea&nbsp;proident.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ad&nbsp;vegan&nbsp;excepteur&nbsp;butcher&nbsp;vice&nbsp;lomo.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&nbsp;type=&quot;text/javascript&quot;&gt;
+&nbsp;&nbsp;&nbsp;$(function&nbsp;()&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&#39;#collapseexample&#39;).on(&#39;show.bs.collapse&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&#39;嘿，当您展开时会提示本警告&#39;);})
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;&nbsp;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1739" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab300586de.jpg" alt="折叠（Collapse）插件事件"/></div>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

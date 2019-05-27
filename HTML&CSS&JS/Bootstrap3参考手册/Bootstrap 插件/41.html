@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 按钮（Button）</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 按钮（Button）</h1>
+	<hr>
+		<p>按钮（Button）在 <a textvalue="Bootstrap 按钮" target="_self" href="/api/view/a/786">Bootstrap 按钮</a> 一章中介绍过。通过按钮（Button）插件，您可以添加进一些交互，比如控制按钮状态，或者为其他组件（如工具栏）创建按钮组。</p><blockquote><img src="../image/560ab01874dc2.png"/>如果您想要单独引用该插件的功能，那么您需要引用 <strong>button.js</strong>。或者，正如 Bootstrap 插件概览 一章中所提到，您可以引用 <em>bootstrap.js</em> 或压缩版的 <em>bootstrap.min.js</em>。</blockquote><h2>加载状态</h2><p>如需向按钮添加加载状态，只需要简单地向 button 元素添加 <strong>data-loading-text=&quot;Loading...&quot;</strong> 作为其属性即可，如下面实例所示：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;按钮（Button）插件加载状态&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;button&nbsp;id=&quot;fat-btn&quot;&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&nbsp;data-loading-text=&quot;Loading...&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;type=&quot;button&quot;&gt;&nbsp;加载状态
+&lt;/button&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(function()&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.btn&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).button(&#39;loading&#39;).delay(1000).queue(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;$(this).button(&#39;reset&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1729" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2eff146d.jpg" alt="按钮（Button）插件加载状态"/></div><h2>单个切换</h2><p>如需激活单个按钮的切换（即改变按钮的正常状态为按压状态，反之亦然），只需向 button 元素添加 <strong>data-toggle=&quot;button&quot;</strong> 作为其属性即可，如下面实例所示：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;按钮（Button）插件单个切换&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;data-toggle=&quot;button&quot;&gt;&nbsp;单个切换
+&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1730" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2f014933.jpg" alt="按钮（Button）插件单个切换"/></div><h2>复选框（Checkbox）</h2><p>您可以创建复选框组，并通过向 <strong>btn-group</strong> 添加 data 属性 <strong>data-toggle=&quot;buttons&quot;</strong> 来添加复选框组的切换。</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;按钮（Button）插件复选框&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;btn-group&quot;&nbsp;data-toggle=&quot;buttons&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;label&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;checkbox&quot;&gt;&nbsp;选项&nbsp;1
+&nbsp;&nbsp;&nbsp;&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&lt;label&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;checkbox&quot;&gt;&nbsp;选项&nbsp;2
+&nbsp;&nbsp;&nbsp;&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&lt;label&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;checkbox&quot;&gt;&nbsp;选项&nbsp;3
+&nbsp;&nbsp;&nbsp;&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1731" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2f0256bf.jpg" alt="按钮（Button）插件复选框"/></div><h2>单选按钮（Radio）</h2><p>类似地，您可以创建单选按钮组，并通过向 <strong>btn-group</strong> 添加 data 属性 <strong>data-toggle=&quot;buttons&quot;</strong> 来添加单选按钮组的切换。</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;按钮（Button）插件单选按钮&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;btn-group&quot;&nbsp;data-toggle=&quot;buttons&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;label&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;radio&quot;&nbsp;name=&quot;options&quot;&nbsp;id=&quot;option1&quot;&gt;&nbsp;选项&nbsp;1
+&nbsp;&nbsp;&nbsp;&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&lt;label&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;radio&quot;&nbsp;name=&quot;options&quot;&nbsp;id=&quot;option2&quot;&gt;&nbsp;选项&nbsp;2
+&nbsp;&nbsp;&nbsp;&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&lt;label&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;radio&quot;&nbsp;name=&quot;options&quot;&nbsp;id=&quot;option3&quot;&gt;&nbsp;选项&nbsp;3
+&nbsp;&nbsp;&nbsp;&lt;/label&gt;
+&lt;/div&gt;	
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1732" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2f037fa3.jpg" alt="按钮（Button）插件单选按钮"/></div><h2>用法</h2><p>您可以 <strong>通过 JavaScript</strong> 启用按钮（Button）插件，如下所示：</p><pre class="prettyprint">$(&#39;.btn&#39;).button()</pre><p></p><h2>选项</h2><p><em>没有选项。</em></p><h2>方法</h2><p>下面是一些按钮（Button）插件中有用的方法：</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>方法</th><th>描述</th><th>实例</th></tr><tr><td>button(&#39;toggle&#39;)</td><td>切换按压状态。赋予按钮被激活的外观。您可以使用 <strong>data-toggle</strong> 属性启用按钮的自动切换。</td><td><pre class="prettyprint">$().button(&#39;toggle&#39;)</pre></td></tr><tr><td>.button(&#39;loading&#39;)</td><td>当加载时，按钮是禁用的，且文本变为 button 元素的 <strong>data-loading-text</strong> 属性的值。</td><td><pre class="prettyprint">$().button(&#39;loading&#39;)</pre></td></tr><tr><td>.button(&#39;reset&#39;)</td><td>重置按钮状态，文本内容恢复为最初的内容。当您想要把按钮返回为原始的状态时，该方法非常有用。</td><td><pre class="prettyprint">$().button(&#39;reset&#39;)</pre></td></tr><tr><td>.button(string)</td><td>该方法中的字符串是指由用户声明的任何字符串。使用该方法，重置按钮状态，并添加新的内容。</td><td><pre class="prettyprint">$().button(string)</pre></td></tr></tbody></table><h3>实例</h3><p>下面的实例演示了上面方法的用法：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;按钮（Button）插件方法&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h2&gt;点击每个按钮查看方法效果&lt;/h2&gt;
+&lt;h4&gt;演示&nbsp;.button(&#39;toggle&#39;)&nbsp;方法&lt;/h4&gt;
+&lt;div&nbsp;id=&quot;myButtons1&quot;&nbsp;class=&quot;bs-example&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&gt;原始&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;演示&nbsp;.button(&#39;loading&#39;)&nbsp;方法&lt;/h4&gt;
+&lt;div&nbsp;id=&quot;myButtons2&quot;&nbsp;class=&quot;bs-example&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-loading-text=&quot;Loading...&quot;&gt;原始
+&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;演示&nbsp;.button(&#39;reset&#39;)&nbsp;方法&lt;/h4&gt;
+&lt;div&nbsp;id=&quot;myButtons3&quot;&nbsp;class=&quot;bs-example&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-loading-text=&quot;Loading...&quot;&gt;原始
+&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;演示&nbsp;.button(string)&nbsp;方法&lt;/h4&gt;
+&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&nbsp;id=&quot;myButton4&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;data-complete-text=&quot;Loading&nbsp;finished&quot;&gt;请点击我
+&lt;/button&gt;
+&lt;script&nbsp;type=&quot;text/javascript&quot;&gt;
+&nbsp;&nbsp;&nbsp;$(function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myButtons1&nbsp;.btn&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).button(&#39;toggle&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;$(function()&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myButtons2&nbsp;.btn&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).button(&#39;loading&#39;).delay(1000).queue(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;$(function()&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myButtons3&nbsp;.btn&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).button(&#39;loading&#39;).delay(1000).queue(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).button(&#39;reset&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;$(function()&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myButton4&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).button(&#39;loading&#39;).delay(1000).queue(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).button(&#39;complete&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;});&nbsp;
+&lt;/script&gt;&nbsp;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1733" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2f053911.jpg" alt="按钮（Button）插件方法"/></div>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

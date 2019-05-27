@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 表格</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 表格</h1>
+	<hr>
+		  <div class="tutintro"> <p>Bootstrap 提供了一个清晰的创建表格的布局。下表列出了 Bootstrap 支持的一些表格元素：</p> <table class="reference">
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+<tr>
+<td>&lt;table&gt;</td>
+<td>为表格添加基础样式。</td>
+</tr>
+<tr>
+<td>&lt;thead&gt;</td>
+<td>表格标题行的容器元素（&lt;tr&gt;），用来标识表格列。</td>
+</tr>
+<tr>
+<td>&lt;tbody&gt;</td>
+<td>表格主体中的表格行的容器元素（&lt;tr&gt;）。</td>
+</tr>
+<tr>
+<td>&lt;tr&gt;</td>
+<td>一组出现在单行上的表格单元格的容器元素（&lt;td&gt; 或 &lt;th&gt;）。</td>
+</tr>
+<tr>
+<td>&lt;td&gt;</td>
+<td>默认的表格单元格。</td>
+</tr>
+<tr>
+<td>&lt;th&gt;</td>
+<td>特殊的表格单元格，用来标识列或行（取决于范围和位置）。必须在 &lt;thead&gt; 内使用。</td>
+</tr>
+<tr>
+<td>&lt;caption&gt;</td>
+<td>关于表格存储内容的描述或总结。</td>
+</tr>
+</table>
+</div> <h3>表格类</h3> <p>下表样式可用于表格中：</p> <table class="reference"><tbody>
+<tr>
+<th style="width:25%;">类</th> <th style="width:68%;">描述</th> <th style="width:7%;">实例</th> </tr>
+<tr>
+<td>.table</td> <td>为任意 &lt;table&gt; 添加基本样式 (只有横向分隔线) </td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1349">实例 »</a></td> </tr>
+<tr>
+<td>.table-striped</td> <td>在 &lt;tbody&gt; 内添加斑马线形式的条纹 ( IE8 不支持)</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1350">实例 »</a></td> </tr>
+<tr>
+<td>.table-bordered</td> <td>为所有表格的单元格添加边框</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1351">实例 »</a></td> </tr>
+<tr>
+<td>.table-hover</td> <td>在 &lt;tbody&gt; 内的任一行启用鼠标悬停状态</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1352">实例 »</a></td> </tr>
+<tr>
+<td>.table-condensed</td> <td>让表格更加紧凑</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1353">实例 »</a></td> </tr>
+<tr>
+<td colspan="2"><em>联合使用所有表格类</em></td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1354">实例 »</a></td> </tr>
+</tbody></table>
+<h3>&lt;tr&gt;, &lt;th&gt; 和 &lt;td&gt; 类</h3> <p>下表的类可用于表格的行或者单元格：</p> <table class="reference"><tbody>
+<tr>
+<th style="width:25%;">类</th> <th style="width:68%;">描述</th> <th style="width:7%;">实例</th> </tr>
+<tr>
+<td>.active</td> <td>将悬停的颜色应用在行或者单元格上</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1355">实例 »</a></td> </tr>
+<tr>
+<td>.success</td> <td>表示成功的操作</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1356">实例 »</a></td> </tr>
+<tr>
+<td>.info</td> <td>表示信息变化的操作</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1357">实例 »</a></td> </tr>
+<tr>
+<td>.warning</td> <td>表示一个警告的操作</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1358">实例 »</a></td> </tr>
+<tr>
+<td>.danger</td> <td>表示一个危险的操作</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1359">实例 »</a></td> </tr>
+</tbody></table>
+<h2 class="tutheader">基本的表格</h2> <p>如果您想要一个只带有内边距（padding）和水平分割的基本表，请添加 class <i>.table</i>，如下面实例所示：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 基本的表格&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;table class="table"&gt;
+   &lt;caption&gt;基本的表格布局&lt;/caption&gt;
+   &lt;thead&gt;
+      &lt;tr&gt;
+         &lt;th&gt;名称&lt;/th&gt;
+         &lt;th&gt;城市&lt;/th&gt;
+      &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Tanmay&lt;/td&gt;
+         &lt;td&gt;Bangalore&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Sachin&lt;/td&gt;
+         &lt;td&gt;Mumbai&lt;/td&gt;
+      &lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1360" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab04fb0782.jpg" alt="基本的表格">
+</div> <br><h2 class="tutheader">可选的表格类</h2> <p>除了基本的表格标记和 .table class，还有一些可以用来为标记定义样式的类。下面将向您介绍这些类。</p> <h3>条纹表格</h3> <p>通过添加 <i>.table-striped</i> class，您将在 &lt;tbody&gt; 内的行上看到条纹，如下面的实例所示：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 条纹表格&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;table class="table table-striped"&gt;
+   &lt;caption&gt;条纹表格布局&lt;/caption&gt;
+   &lt;thead&gt;
+      &lt;tr&gt;
+         &lt;th&gt;名称&lt;/th&gt;
+         &lt;th&gt;城市&lt;/th&gt;
+         &lt;th&gt;密码&lt;/th&gt;
+      &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Tanmay&lt;/td&gt;
+         &lt;td&gt;Bangalore&lt;/td&gt;
+         &lt;td&gt;560001&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Sachin&lt;/td&gt;
+         &lt;td&gt;Mumbai&lt;/td&gt;
+         &lt;td&gt;400003&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Uma&lt;/td&gt;
+         &lt;td&gt;Pune&lt;/td&gt;
+         &lt;td&gt;411027&lt;/td&gt;
+      &lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1361" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab04fdc6ac.jpg" alt="条纹表格">
+</div> <h3>边框表格</h3> <p>通过添加 <i>.table-bordered</i> class，您将看到每个元素周围都有边框，且占整个表格是圆角的，如下面的实例所示：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 边框表格&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;table class="table table-bordered"&gt;
+   &lt;caption&gt;边框表格布局&lt;/caption&gt;
+   &lt;thead&gt;
+      &lt;tr&gt;
+         &lt;th&gt;名称&lt;/th&gt;
+         &lt;th&gt;城市&lt;/th&gt;
+         &lt;th&gt;密码&lt;/th&gt;
+      &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Tanmay&lt;/td&gt;
+         &lt;td&gt;Bangalore&lt;/td&gt;
+         &lt;td&gt;560001&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Sachin&lt;/td&gt;
+         &lt;td&gt;Mumbai&lt;/td&gt;
+         &lt;td&gt;400003&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Uma&lt;/td&gt;
+         &lt;td&gt;Pune&lt;/td&gt;
+         &lt;td&gt;411027&lt;/td&gt;
+      &lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1362" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab0500badc.jpg" alt="边框表格">
+</div> <h3>悬停表格</h3> <p>通过添加 <i>.table-hover</i> class，当指针悬停在行上时会出现浅灰色背景，如下面的实例所示：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 悬停表格&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;table class="table table-hover"&gt;
+   &lt;caption&gt;悬停表格布局&lt;/caption&gt;
+   &lt;thead&gt;
+      &lt;tr&gt;
+         &lt;th&gt;名称&lt;/th&gt;
+         &lt;th&gt;城市&lt;/th&gt;
+         &lt;th&gt;密码&lt;/th&gt;
+      &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Tanmay&lt;/td&gt;
+         &lt;td&gt;Bangalore&lt;/td&gt;
+         &lt;td&gt;560001&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Sachin&lt;/td&gt;
+         &lt;td&gt;Mumbai&lt;/td&gt;
+         &lt;td&gt;400003&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Uma&lt;/td&gt;
+         &lt;td&gt;Pune&lt;/td&gt;
+         &lt;td&gt;411027&lt;/td&gt;
+      &lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1363" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab0503c440.jpg" alt="悬停表格">
+</div> <h3>精简表格</h3> <p>通过添加 <i>.table-condensed </i> class，行内边距（padding）被切为两半，以便让表看起来更紧凑，如下面的实例所示。这在想让信息看起来更紧凑时非常有用。</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 精简表格&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;table class="table table-condensed"&gt;
+   &lt;caption&gt;精简表格布局&lt;/caption&gt;
+   &lt;thead&gt;
+      &lt;tr&gt;
+         &lt;th&gt;名称&lt;/th&gt;
+         &lt;th&gt;城市&lt;/th&gt;
+         &lt;th&gt;密码&lt;/th&gt;
+      &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Tanmay&lt;/td&gt;
+         &lt;td&gt;Bangalore&lt;/td&gt;
+         &lt;td&gt;560001&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Sachin&lt;/td&gt;
+         &lt;td&gt;Mumbai&lt;/td&gt;
+         &lt;td&gt;400003&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Uma&lt;/td&gt;
+         &lt;td&gt;Pune&lt;/td&gt;
+         &lt;td&gt;411027&lt;/td&gt;
+      &lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1364" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab0505b077.jpg" alt="精简表格">
+</div> <br><h2 class="tutheader">上下文类</h2> <p>下表中所列出的上下文类允许您改变表格行或单个单元格的背景颜色。</p> <table class="reference notranslate">
+<tr>
+<th>类</th>
+<th>描述</th>
+</tr>
+<tr>
+<td>.active</td>
+<td>对某一特定的行或单元格应用悬停颜色</td>
+</tr>
+<tr>
+<td>.success</td>
+<td>表示一个成功的或积极的动作</td>
+</tr>
+<tr>
+<td>.warning</td>
+<td>表示一个需要注意的警告</td>
+</tr>
+<tr>
+<td>.danger</td>
+<td>表示一个危险的或潜在的负面动作</td>
+</tr>
+</table>
+<p>这些类可被应用到 &lt;tr&gt;、&lt;td&gt; 或 &lt;th&gt;。</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 上下文类&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;table class="table"&gt;
+   &lt;caption&gt;上下文表格布局&lt;/caption&gt;
+   &lt;thead&gt;
+      &lt;tr&gt;
+         &lt;th&gt;产品&lt;/th&gt;
+         &lt;th&gt;付款日期&lt;/th&gt;
+         &lt;th&gt;状态&lt;/th&gt;
+      &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+      &lt;tr class="active"&gt;
+         &lt;td&gt;产品1&lt;/td&gt;
+         &lt;td&gt;23/11/2013&lt;/td&gt;
+         &lt;td&gt;待发货&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class="success"&gt;
+         &lt;td&gt;产品2&lt;/td&gt;
+         &lt;td&gt;10/11/2013&lt;/td&gt;
+         &lt;td&gt;发货中&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr  class="warning"&gt;
+         &lt;td&gt;产品3&lt;/td&gt;
+         &lt;td&gt;20/10/2013&lt;/td&gt;
+         &lt;td&gt;待确认&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr  class="danger"&gt;
+         &lt;td&gt;产品4&lt;/td&gt;
+         &lt;td&gt;20/10/2013&lt;/td&gt;
+         &lt;td&gt;已退货&lt;/td&gt;
+      &lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1365" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab0507b807.jpg" alt="上下文类">
+</div> <br><h2 class="tutheader">响应式表格</h2> <p>通过把任意的 <i>.table</i> 包在 <i>.table-responsive</i> class 内，您可以让表格水平滚动以适应小型设备（小于 768px）。当在大于 768px 宽的大型设备上查看时，您将看不到任何的差别。</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 响应式表格&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="table-responsive"&gt;
+   &lt;table class="table"&gt;
+      &lt;caption&gt;响应式表格布局&lt;/caption&gt;
+      &lt;thead&gt;
+         &lt;tr&gt;
+            &lt;th&gt;产品&lt;/th&gt;
+            &lt;th&gt;付款日期&lt;/th&gt;
+            &lt;th&gt;状态&lt;/th&gt;
+         &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+         &lt;tr&gt;
+            &lt;td&gt;产品1&lt;/td&gt;
+            &lt;td&gt;23/11/2013&lt;/td&gt;
+            &lt;td&gt;待发货&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;产品2&lt;/td&gt;
+            &lt;td&gt;10/11/2013&lt;/td&gt;
+            &lt;td&gt;发货中&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;产品3&lt;/td&gt;
+            &lt;td&gt;20/10/2013&lt;/td&gt;
+            &lt;td&gt;待确认&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;产品4&lt;/td&gt;
+            &lt;td&gt;20/10/2013&lt;/td&gt;
+            &lt;td&gt;已退货&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/tbody&gt;
+   &lt;/table&gt;
+&lt;/div&gt;  	
+
+&lt;/body&gt;
+&lt;/html&gt; 	
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1366" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab050a0db7.jpg" alt="响应式表格">
+</div> 	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

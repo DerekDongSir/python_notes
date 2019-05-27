@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 警告框（Alert）</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 警告框（Alert）</h1>
+	<hr>
+		<p>警告框（Alert）消息大多是用来想终端用户显示诸如警告或确认消息的信息。使用警告框（Alert）插件，您可以向所有的警告框消息添加可取消（dismiss）功能。</p><blockquote><img src="../image/560ab01874dc2.png"/>如果您想要单独引用该插件的功能，那么您需要引用 <strong>alert.js</strong>。或者，正如 Bootstrap 插件概览 一章中所提到，您可以引用 <em>bootstrap.js</em> 或压缩版的 <em>bootstrap.min.js</em>。</blockquote><h2>用法</h2><p>您可以有以下两种方式启用警告框的可取消（dismissal）功能：</p><ul class="list-group"><li class="list-group-item"><strong>通过 data 属性</strong>：通过数据 API（Data API）添加可取消功能，只需要向关闭按钮添加 <strong>data-dismiss=&quot;alert&quot;</strong>，就会自动为警告框添加关闭功能。 <pre class="prettyprint">&lt;a&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&nbsp;href=&quot;#&quot;&nbsp;aria-hidden=&quot;true&quot;&gt;
+&nbsp;&nbsp;&nbsp;&amp;times;
+&lt;/a&gt;</pre> </li><li class="list-group-item"><strong>通过 JavaScript</strong>：通过 JavaScript 添加可取消功能： <pre class="prettyprint">$(&quot;.alert&quot;).alert()</pre> </li></ul><h3>实例</h3><p>下面的实例演示了通过 data 属性使用警告框（Alert）插件的用法。</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;警告框（Alert）插件&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-warning&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;times;
+&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;strong&gt;警告！&lt;/strong&gt;您的网络连接有问题。
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1725" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2e46cca9.jpg" alt="警告框（Alert）插件"/></div><h2>选项</h2><p><em>没有选项。</em></p><h2>方法</h2><p>下面是一些警告框（Alert）插件中有用的方法：</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>方法</th><th>描述</th><th>实例</th></tr><tr><td>.alert()</td><td>该方法让所有的警告框都带有关闭功能。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).alert();</pre></td></tr><tr><td><strong>Close Method</strong> .alert(&#39;close&#39;)</td><td>关闭所有的警告框。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).alert(&#39;close&#39;);</pre></td></tr></tbody></table><blockquote><img src="../image/560ab01874dc2.png"/>如需在关闭时启用动画效果，请确保添加了 <strong>.fade</strong> 和 <strong>.in</strong> class。</blockquote><h3>实例</h3><p>下面的实例演示了 <strong>.alert()</strong> 方法的用法：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;警告框（Alert）插件&nbsp;alert()&nbsp;方法&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h3&gt;警告框（Alert）插件&nbsp;alert()&nbsp;方法&lt;/h3&gt;
+&lt;div&nbsp;id=&quot;myAlert&quot;&nbsp;class=&quot;alert&nbsp;alert-success&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&gt;&amp;times;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;strong&gt;成功！&lt;/strong&gt;结果是成功的。
+&lt;/div&gt;
+&lt;div&nbsp;id=&quot;myAlert&quot;&nbsp;class=&quot;alert&nbsp;alert-warning&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&gt;&amp;times;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;strong&gt;警告！&lt;/strong&gt;您的网络连接有问题。
+&lt;/div&gt;
+
+&lt;script&nbsp;type=&quot;text/javascript&quot;&gt;
+$(function(){
+&nbsp;&nbsp;&nbsp;$(&quot;.close&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myAlert&quot;).alert();
+&nbsp;&nbsp;&nbsp;});
+});&nbsp;&nbsp;
+&lt;/script&gt;&nbsp;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1726" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>下面的实例演示了 <strong>.alert(&#39;close&#39;)</strong> 方法的用法：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;警告框（Alert）插件&nbsp;alert(&#39;close&#39;)&nbsp;方法&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h3&gt;警告框（Alert）插件&nbsp;alert(&#39;close&#39;)&nbsp;方法&lt;/h3&gt;
+&lt;div&nbsp;id=&quot;myAlert&quot;&nbsp;class=&quot;alert&nbsp;alert-success&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&gt;&amp;times;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;strong&gt;成功！&lt;/strong&gt;结果是成功的。
+&lt;/div&gt;
+&lt;div&nbsp;id=&quot;myAlert&quot;&nbsp;class=&quot;alert&nbsp;alert-warning&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&gt;&amp;times;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;strong&gt;警告！&lt;/strong&gt;您的网络连接有问题。
+&lt;/div&gt;
+
+&lt;script&nbsp;type=&quot;text/javascript&quot;&gt;
+$(function(){
+&nbsp;&nbsp;&nbsp;$(&quot;.close&quot;).click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#myAlert&quot;).alert(&#39;close&#39;);
+&nbsp;&nbsp;&nbsp;});
+});&nbsp;&nbsp;
+
+&lt;/script&gt;&nbsp;&nbsp;&nbsp;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1727" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>您可以看到所有的警告框都应用了关闭功能，即关闭任意的警告框，其他剩余的警告框也会被关闭。</p><h2>事件</h2><p>下表列出了警告框（Alert）插件中要用到的事件。这些事件可在函数中当钩子使用。</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>事件</th><th>描述</th><th>实例</th></tr><tr><td>close.bs.alert</td><td>当调用 <em>close</em> 实例方法时立即触发该事件。</td><td><pre class="prettyprint">$(&#39;#myalert&#39;).bind(&#39;close.bs.alert&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr><tr><td>closed.bs.alert</td><td>当警告框被关闭时触发该事件（将等待 CSS 过渡效果完成）。</td><td><pre class="prettyprint">$(&#39;#myalert&#39;).bind(&#39;closed.bs.alert&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr></tbody></table><h3>实例</h3><p>下面的实例演示了警告框（Alert）插件的事件：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;警告框（Alert）插件事件&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div&nbsp;id=&quot;myAlert&quot;&nbsp;class=&quot;alert&nbsp;alert-success&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&gt;&amp;times;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;strong&gt;成功！&lt;/strong&gt;结果是成功的。
+&lt;/div&gt;
+
+&lt;script&nbsp;type=&quot;text/javascript&quot;&gt;
+$(function(){
+&nbsp;&nbsp;&nbsp;$(&quot;#myAlert&quot;).bind(&#39;closed.bs.alert&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&quot;警告消息框被关闭。&quot;);
+&nbsp;&nbsp;&nbsp;});
+});
+&lt;/script&gt;&nbsp;&nbsp;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1728" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2e48dc09.jpg" alt="警告框（Alert）插件事件"/></div>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

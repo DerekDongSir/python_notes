@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 缩略图</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 缩略图</h1>
+	<hr>
+		  <p>本章将讲解 Bootstrap 缩略图。大多数站点都需要在网格中布局图像、视频、文本等。Bootstrap 通过缩略图为此提供了一种简便的方式。使用 Bootstrap 创建缩略图的步骤如下：</p> <ul class="list-group">
+<li class="list-group-item">在图像周围添加带有 class <b>.thumbnail</b> 的 &lt;a&gt; 标签。</li> <li class="list-group-item">这会添加四个像素的内边距（padding）和一个灰色的边框。</li> <li class="list-group-item">当鼠标悬停在图像上时，会动画显示出图像的轮廓。</li> </ul>
+<p>下面的实例演示了默认的缩略图：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 缩略图&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="row"&gt;
+   &lt;div class="col-sm-6 col-md-3"&gt;
+      &lt;a href="#" class="thumbnail"&gt;
+         &lt;img src="/wp-content/uploads/2014/06/kittens.jpg" 
+         alt="通用的占位符缩略图"&gt;
+      &lt;/a&gt;
+   &lt;/div&gt;
+   &lt;div class="col-sm-6 col-md-3"&gt;
+      &lt;a href="#" class="thumbnail"&gt;
+         &lt;img src="/wp-content/uploads/2014/06/kittens.jpg" 
+         alt="通用的占位符缩略图"&gt;
+      &lt;/a&gt;
+   &lt;/div&gt;
+   &lt;div class="col-sm-6 col-md-3"&gt;
+      &lt;a href="#" class="thumbnail"&gt;
+         &lt;img src="/wp-content/uploads/2014/06/kittens.jpg" 
+         alt="通用的占位符缩略图"&gt;
+      &lt;/a&gt;
+   &lt;/div&gt;
+   &lt;div class="col-sm-6 col-md-3"&gt;
+      &lt;a href="#" class="thumbnail"&gt;
+         &lt;img src="/wp-content/uploads/2014/06/kittens.jpg" 
+         alt="通用的占位符缩略图"&gt;
+      &lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1681" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab21a130d2.jpg" alt="缩略图">
+</div> <h2>添加自定义的内容</h2> <p>现在我们有了一个基本的缩略图，我们可以向缩略图添加各种 HTML 内容，比如标题、段落或按钮。具体步骤如下：</p> <ul class="list-group">
+<li class="list-group-item">把带有 class <b>.thumbnail</b> 的 &lt;a&gt; 标签改为 &lt;div&gt;。</li> <li class="list-group-item">在该 &lt;div&gt; 内，您可以添加任何您想要添加的东西。由于这是一个 &lt;div&gt;，我们可以使用默认的基于 span 的命名规则来调整大小。</li> <li class="list-group-item">如果您想要给多个图像进行分组，请把它们放置在一个无序列表中，且每个列表项向左浮动。</li> </ul>
+<p>下面的实例演示了这点：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 自定义缩略图&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="row"&gt;
+   &lt;div class="col-sm-6 col-md-3"&gt;
+      &lt;div class="thumbnail"&gt;
+         &lt;img src="/wp-content/uploads/2014/06/kittens.jpg" 
+         alt="通用的占位符缩略图"&gt;
+      &lt;/div&gt;
+      &lt;div class="caption"&gt;
+         &lt;h3&gt;缩略图标签&lt;/h3&gt;
+         &lt;p&gt;一些示例文本。一些示例文本。&lt;/p&gt;
+         &lt;p&gt;
+            &lt;a href="#" class="btn btn-primary" role="button"&gt;
+               按钮
+            &lt;/a&gt; 
+            &lt;a href="#" class="btn btn-default" role="button"&gt;
+               按钮
+            &lt;/a&gt;
+         &lt;/p&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="col-sm-6 col-md-3"&gt;
+      &lt;div class="thumbnail"&gt;
+         &lt;img src="/wp-content/uploads/2014/06/kittens.jpg" 
+         alt="通用的占位符缩略图"&gt;
+      &lt;/div&gt;
+      &lt;div class="caption"&gt;
+         &lt;h3&gt;缩略图标签&lt;/h3&gt;
+         &lt;p&gt;一些示例文本。一些示例文本。&lt;/p&gt;
+         &lt;p&gt;
+            &lt;a href="#" class="btn btn-primary" role="button"&gt;
+               按钮
+            &lt;/a&gt; 
+            &lt;a href="#" class="btn btn-default" role="button"&gt;
+               按钮
+            &lt;/a&gt;
+         &lt;/p&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="col-sm-6 col-md-3"&gt;
+      &lt;div class="thumbnail"&gt;
+         &lt;img src="/wp-content/uploads/2014/06/kittens.jpg" 
+         alt="通用的占位符缩略图"&gt;
+      &lt;/div&gt;
+      &lt;div class="caption"&gt;
+         &lt;h3&gt;缩略图标签&lt;/h3&gt;
+         &lt;p&gt;一些示例文本。一些示例文本。&lt;/p&gt;
+         &lt;p&gt;
+            &lt;a href="#" class="btn btn-primary" role="button"&gt;
+               按钮
+            &lt;/a&gt; 
+            &lt;a href="#" class="btn btn-default" role="button"&gt;
+               按钮
+            &lt;/a&gt;
+         &lt;/p&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="col-sm-6 col-md-3"&gt;
+      &lt;div class="thumbnail"&gt;
+         &lt;img src="/wp-content/uploads/2014/06/kittens.jpg" 
+         alt="通用的占位符缩略图"&gt;
+      &lt;/div&gt;
+      &lt;div class="caption"&gt;
+         &lt;h3&gt;缩略图标签&lt;/h3&gt;
+         &lt;p&gt;一些示例文本。一些示例文本。&lt;/p&gt;
+         &lt;p&gt;
+            &lt;a href="#" class="btn btn-primary" role="button"&gt;
+               按钮
+            &lt;/a&gt; 
+            &lt;a href="#" class="btn btn-default" role="button"&gt;
+               按钮
+            &lt;/a&gt;
+         &lt;/p&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1682" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab21a497f7.jpg" alt="自定义缩略图">
+</div> 	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

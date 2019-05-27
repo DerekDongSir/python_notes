@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 模态框（Modal）插件</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 模态框（Modal）插件</h1>
+	<hr>
+		<p>模态框（Modal）是覆盖在父窗体上的子窗体。通常，目的是显示来自一个单独的源的内容，可以在不离开父窗体的情况下有一些互动。子窗体可提供信息、交互等。</p><blockquote><img src="../image/560ab01874dc2.png"/>如果您想要单独引用该插件的功能，那么您需要引用 <strong>modal.js</strong>。或者，正如 Bootstrap 插件概览 一章中所提到，您可以引用 <em>bootstrap.js</em> 或压缩版的 <em>bootstrap.min.js</em>。</blockquote><h2>用法</h2><p>您可以切换模态框（Modal）插件的隐藏内容：</p><ul class="list-group"><li class="list-group-item"><strong>通过 data 属性</strong>：在控制器元素（比如按钮或者链接）上设置属性 <strong>data-toggle=&quot;modal&quot;</strong>，同时设置 <strong>data-target=&quot;#identifier&quot;</strong> 或 <strong>href=&quot;#identifier&quot;</strong> 来指定要切换的特定的模态框（带有 id=&quot;identifier&quot;）。</li><li class="list-group-item"><strong>通过 JavaScript</strong>：使用这种技术，您可以通过简单的一行 JavaScript 来调用带有 id=&quot;identifier&quot; 的模态框： <pre class="prettyprint">$(&#39;#identifier&#39;).modal(options)</pre></li></ul><h3>实例</h3><p>一个静态的模态窗口实例，如下面的实例所示：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;模态框（Modal）插件&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h2&gt;创建模态框（Modal）&lt;/h2&gt;
+&lt;!--&nbsp;按钮触发模态框&nbsp;--&gt;
+&lt;button&nbsp;class=&quot;btn&nbsp;btn-primary&nbsp;btn-lg&quot;&nbsp;data-toggle=&quot;modal&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;data-target=&quot;#myModal&quot;&gt;
+&nbsp;&nbsp;&nbsp;开始演示模态框
+&lt;/button&gt;
+
+&lt;!--&nbsp;模态框（Modal）&nbsp;--&gt;
+&lt;div&nbsp;class=&quot;modal&nbsp;fade&quot;&nbsp;id=&quot;myModal&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;role=&quot;dialog&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;aria-labelledby=&quot;myModalLabel&quot;&nbsp;aria-hidden=&quot;true&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-dialog&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;close&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-dismiss=&quot;modal&quot;&nbsp;aria-hidden=&quot;true&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;times;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;modal-title&quot;&nbsp;id=&quot;myModalLabel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模态框（Modal）标题
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这里添加一些文本
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-footer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-dismiss=&quot;modal&quot;&gt;关闭
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提交更改
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;&lt;!--&nbsp;/.modal-content&nbsp;--&gt;
+&lt;/div&gt;&lt;!--&nbsp;/.modal&nbsp;--&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1705" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab29ce9c50.jpg" alt="模态框（Modal）插件"/></div><p><strong>代码讲解：</strong> </p><ul class="list-group"><li class="list-group-item">使用模态窗口，您需要有某种触发器。您可以使用按钮或链接。这里我们使用的是按钮。</li><li class="list-group-item">如果您仔细查看上面的代码，您会发现在 &lt;button&gt; 标签中，<strong>data-target=&quot;#myModal&quot;</strong> 是您想要在页面上加载的模态框的目标。您可以在页面上创建多个模态框，然后为每个模态框创建不同的触发器。现在，很明显，您不能在同一时间加载多个模块，但您可以在页面上创建多个在不同时间进行加载。</li><li class="list-group-item">在模态框中需要注意两点：<ul class="list-group"><li class="list-group-item">第一是 <strong>.modal</strong>，用来把 &lt;div&gt; 的内容识别为模态框。</li><li class="list-group-item">第二是 <strong>.fade</strong> class。当模态框被切换时，它会引起内容淡入淡出。</li></ul></li><li class="list-group-item"><strong>aria-labelledby=&quot;myModalLabel&quot;</strong>，该属性引用模态框的标题。</li><li class="list-group-item">属性 <strong>aria-hidden=&quot;true&quot;</strong> 用于保持模态窗口不可见，直到触发器被触发为止（比如点击在相关的按钮上）。</li><li class="list-group-item">&lt;div class=&quot;modal-header&quot;&gt;，modal-header 是为模态窗口的头部定义样式的类。</li><li class="list-group-item"><strong>class=&quot;close&quot;</strong>，close 是一个 CSS class，用于为模态窗口的关闭按钮设置样式。</li><li class="list-group-item"><strong>data-dismiss=&quot;modal&quot;</strong>，是一个自定义的 HTML5 data 属性。在这里它被用于关闭模态窗口。</li><li class="list-group-item"><strong>class=&quot;modal-body&quot;</strong>，是 Bootstrap CSS 的一个 CSS class，用于为模态窗口的主体设置样式。</li><li class="list-group-item"><strong>class=&quot;modal-footer&quot;</strong>，是 Bootstrap CSS 的一个 CSS class，用于为模态窗口的底部设置样式。</li><li class="list-group-item"><strong>data-toggle=&quot;modal&quot;</strong>，HTML5 自定义的 data 属性 data-toggle 用于打开模态窗口。</li></ul><h2>选项</h2><p>有一些选项可以用来定制模态窗口（Modal Window）的外观和感观，它们是通过 data 属性或 JavaScript 来传递的。下表列出了这些选项：</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>选项名称</th><th>类型/默认值</th><th>Data 属性名称</th><th>描述</th></tr><tr><td>backdrop</td><td>boolean 或 string &#39;static&#39;<br/><em>默认值：true</em></td><td>data-backdrop</td><td>指定一个静态的背景，当用户点击模态框外部时不会关闭模态框。</td></tr><tr><td>keyboard</td><td>boolean<br/><em>默认值：true</em></td><td>data-keyboard</td><td>当按下 escape 键时关闭模态框，设置为 false 时则按键无效。</td></tr><tr><td>show</td><td>boolean<br/><em>默认值：true</em></td><td>data-show</td><td>当初始化时显示模态框。</td></tr><tr><td>remote</td><td>path<br/><em>默认值：false</em></td><td>data-remote</td><td>使用 jQuery <em>.load</em> 方法，为模态框的主体注入内容。如果添加了一个带有有效 URL 的 href，则会加载其中的内容。如下面的实例所示： <pre class="prettyprint">&lt;a&nbsp;data-toggle=&quot;modal&quot;&nbsp;href=&quot;remote.html&quot;&nbsp;data-target=&quot;#modal&quot;&gt;请点击我&lt;/a&gt;</pre></td></tr></tbody></table><h2>方法</h2><p>下面是一些可与 modal() 一起使用的有用的方法。</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>方法</th><th>描述</th><th>实例</th></tr><tr><td><strong>Options:</strong> .modal(options)</td><td>把内容作为模态框激活。接受一个可选的选项对象。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).modal({
+keyboard:&nbsp;false
+})</pre></td></tr><tr><td><strong>Toggle:</strong> .modal(&#39;toggle&#39;)</td><td>手动切换模态框。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).modal(&#39;toggle&#39;)</pre></td></tr><tr><td><strong>Show:</strong> .modal(&#39;show&#39;)</td><td>手动打开模态框。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).modal(&#39;show&#39;)</pre></td></tr><tr><td><strong>Hide:</strong> .modal(&#39;hide&#39;)</td><td>手动隐藏模态框。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).modal(&#39;hide&#39;)</pre></td></tr></tbody></table><h3>实例</h3><p>下面的实例演示了方法的用法：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;模态框（Modal）插件方法&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h2&gt;模态框（Modal）插件方法&lt;/h2&gt;
+
+&lt;!--&nbsp;按钮触发模态框&nbsp;--&gt;
+&lt;button&nbsp;class=&quot;btn&nbsp;btn-primary&nbsp;btn-lg&quot;&nbsp;data-toggle=&quot;modal&quot;&nbsp;data-target=&quot;#myModal&quot;&gt;
+&nbsp;&nbsp;&nbsp;开始演示模态框
+&lt;/button&gt;
+
+&lt;!--&nbsp;模态框（Modal）&nbsp;--&gt;
+&lt;div&nbsp;class=&quot;modal&nbsp;fade&quot;&nbsp;id=&quot;myModal&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;role=&quot;dialog&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;aria-labelledby=&quot;myModalLabel&quot;&nbsp;aria-hidden=&quot;true&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-dialog&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;modal&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aria-hidden=&quot;true&quot;&gt;×
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;modal-title&quot;&nbsp;id=&quot;myModalLabel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模态框（Modal）标题
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按下&nbsp;ESC&nbsp;按钮退出。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-footer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-dismiss=&quot;modal&quot;&gt;关闭
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提交更改
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;&lt;!--&nbsp;/.modal-content&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;&lt;!--&nbsp;/.modal-dialog&nbsp;--&gt;
+&lt;/div&gt;&lt;!--&nbsp;/.modal&nbsp;--&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(function&nbsp;()&nbsp;{&nbsp;$(&#39;#myModal&#39;).modal({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keyboard:&nbsp;true
+&nbsp;&nbsp;&nbsp;})});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1706" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab29d45b63.jpg" alt="模态框（Modal）插件方法"/></div><p>只需要点击 ESC 键，模态窗口即会退出。</p><h2>事件</h2><p>下表列出了模态框中要用到事件。这些事件可在函数中当钩子使用。</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>事件</th><th>描述</th><th>实例</th></tr><tr><td>show.bs.modal</td><td>在调用 show 方法后触发。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).on(&#39;show.bs.modal&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr><tr><td>shown.bs.modal</td><td>当模态框对用户可见时触发（将等待 CSS 过渡效果完成）。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).on(&#39;shown.bs.modal&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr><tr><td>hide.bs.modal</td><td>当调用 hide 实例方法时触发。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).on(&#39;hide.bs.modal&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr><tr><td>hidden.bs.modal</td><td>当模态框完全对用户隐藏时触发。</td><td><pre class="prettyprint">$(&#39;#identifier&#39;).on(&#39;hidden.bs.modal&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;//&nbsp;执行一些动作...
+})</pre></td></tr></tbody></table><h3>实例</h3><p>下面的实例演示了事件的用法：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;模态框（Modal）插件事件&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h2&gt;模态框（Modal）插件事件&lt;/h2&gt;
+
+&lt;!--&nbsp;按钮触发模态框&nbsp;--&gt;
+&lt;button&nbsp;class=&quot;btn&nbsp;btn-primary&nbsp;btn-lg&quot;&nbsp;data-toggle=&quot;modal&quot;&nbsp;data-target=&quot;#myModal&quot;&gt;
+&nbsp;&nbsp;&nbsp;开始演示模态框
+&lt;/button&gt;
+
+&lt;!--&nbsp;模态框（Modal）&nbsp;--&gt;
+&lt;div&nbsp;class=&quot;modal&nbsp;fade&quot;&nbsp;id=&quot;myModal&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;role=&quot;dialog&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;aria-labelledby=&quot;myModalLabel&quot;&nbsp;aria-hidden=&quot;true&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-dialog&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;modal&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aria-hidden=&quot;true&quot;&gt;×
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;modal-title&quot;&nbsp;id=&quot;myModalLabel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模态框（Modal）标题
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击关闭按钮检查事件功能。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;modal-footer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-dismiss=&quot;modal&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关闭
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提交更改
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;&lt;!--&nbsp;/.modal-content&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;&lt;!--&nbsp;/.modal-dialog&nbsp;--&gt;
+&lt;/div&gt;&lt;!--&nbsp;/.modal&nbsp;--&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(function&nbsp;()&nbsp;{&nbsp;$(&#39;#myModal&#39;).modal(&#39;hide&#39;)})});
+&lt;/script&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(function&nbsp;()&nbsp;{&nbsp;$(&#39;#myModal&#39;).on(&#39;hide.bs.modal&#39;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&#39;嘿，我听说您喜欢模态框...&#39;);})
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1707" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab29d7707e.jpg" alt="模态框（Modal）插件事件"/></div><p>正如上面实例所示，如果您点击了 <em>关闭</em> 按钮，即 <em>hide</em> 事件，则会显示一个警告消息。</p>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

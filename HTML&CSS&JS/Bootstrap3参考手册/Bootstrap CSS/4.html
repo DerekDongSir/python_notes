@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 排版</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 排版</h1>
+	<hr>
+		  <div class="tutintro"> <p>Bootstrap 使用 Helvetica Neue、 Helvetica、 Arial 和 sans-serif 作为其默认的字体栈。</p> <p>使用 Bootstrap 的排版特性，您可以创建标题、段落、列表及其他内联元素。</p> </div> <hr>
+<h2>标题</h2> <p>Bootstrap 中定义了所有的 HTML 标题（h1 到 h6）的样式。请看下面的实例：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 标题&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;我是标题1 h1&lt;/h1&gt;
+&lt;h2&gt;我是标题2 h2&lt;/h2&gt;
+&lt;h3&gt;我是标题3 h3&lt;/h3&gt;
+&lt;h4&gt;我是标题4 h4&lt;/h4&gt;
+&lt;h5&gt;我是标题5 h5&lt;/h5&gt;
+&lt;h6&gt;我是标题6 h6&lt;/h6&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1330" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab0290d54e.jpg" alt="标题">
+</div> <h3>内联子标题</h3> <p>如果需要向任何标题添加一个内联子标题，只需要简单地在元素两旁添加 &lt;small&gt;，或者添加 <b>.small</b> class，这样子您就能得到一个字号更小的颜色更浅的文本，如下面实例所示：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 内联子标题&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;我是标题1 h1. &lt;small&gt;我是副标题1 h1&lt;/small&gt;&lt;/h1&gt; 
+&lt;h2&gt;我是标题2 h2. &lt;small&gt;我是副标题2 h2&lt;/small&gt;&lt;/h2&gt;
+&lt;h3&gt;我是标题3 h3. &lt;small&gt;我是副标题3 h3&lt;/small&gt;&lt;/h3&gt;
+&lt;h4&gt;我是标题4 h4. &lt;small&gt;我是副标题4 h4&lt;/small&gt;&lt;/h4&gt;
+&lt;h5&gt;我是标题5 h5. &lt;small&gt;我是副标题5 h5&lt;/small&gt;&lt;/h5&gt;
+&lt;h6&gt;我是标题6 h6. &lt;small&gt;我是副标题6 h6&lt;/small&gt;&lt;/h6&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1331" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab029486ac.jpg" alt="内联子标题">
+</div> <hr>
+<h2>引导主体副本</h2> <p>为了给段落添加强调文本，则可以添加 class="lead"，这将得到更大更粗、行高更高的文本，如下面实例所示：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 引导主体副本&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;hr&gt;
+&lt;h2&gt;引导主体副本&lt;/h2&gt;
+&lt;p class="lead"&gt;这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1332" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab0297c2d8.jpg" alt="引导主体副本">
+</div> <hr>
+<h2>强调</h2> <p>HTML 的默认强调标签 &lt;small&gt;（设置文本为父文本大小的 85%）、&lt;strong&gt;（设置文本为更粗的文本）、&lt;em&gt;（设置文本为斜体）。</p> <p>Bootstrap 提供了一些用于强调文本的类，如下面实例所示：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 强调&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;small&gt;本行内容是在标签内&lt;/small&gt;&lt;br&gt;
+&lt;strong&gt;本行内容是在标签内&lt;/strong&gt;&lt;br&gt;
+&lt;em&gt;本行内容是在标签内，并呈现为斜体&lt;/em&gt;&lt;br&gt;
+&lt;p class="text-left"&gt;向左对齐文本&lt;/p&gt;
+&lt;p class="text-center"&gt;居中对齐文本&lt;/p&gt;
+&lt;p class="text-right"&gt;向右对齐文本&lt;/p&gt;
+&lt;p class="text-muted"&gt;本行内容是减弱的&lt;/p&gt;
+&lt;p class="text-primary"&gt;本行内容带有一个 primary class&lt;/p&gt;
+&lt;p class="text-success"&gt;本行内容带有一个 success class&lt;/p&gt;
+&lt;p class="text-info"&gt;本行内容带有一个 info class&lt;/p&gt;
+&lt;p class="text-warning"&gt;本行内容带有一个 warning class&lt;/p&gt;
+&lt;p class="text-danger"&gt;本行内容带有一个 danger class&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1333" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab029b58dd.jpg" alt="强调">
+</div> <hr>
+<h2>缩写</h2> <p>HTML <abbr> 元素提供了用于缩写的标记，比如 WWW 或 HTTP。Bootstrap 定义 &lt;abbr&gt; 元素的样式为显示在文本底部的一条虚线边框，当鼠标悬停在上面时会显示完整的文本（只要您为 &lt;abbr&gt; title 属性添加了文本）。为了得到一个更小字体的文本，请添加 .initialism 到 &lt;abbr&gt;。</abbr></p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 缩写&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;abbr title="World Wide Web"&gt;WWW&lt;/abbr&gt;&lt;br&gt;
+&lt;abbr title="Real Simple Syndication" class="initialism"&gt;RSS&lt;/abbr&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1334" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab029e0097.jpg" alt="缩写">
+</div> <hr>
+<h2>地址（Address）</h2> <p>使用 &lt;address&gt; 标签，您可以在网页上显示联系信息。由于 &lt;address&gt; 默认为 display:block;，您需要使用 <br> 标签来为封闭的地址文本添加换行。</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 地址&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;address&gt;
+  &lt;strong&gt;Some Company, Inc.&lt;/strong&gt;&lt;br&gt;
+  007 street&lt;br&gt;
+  Some City, State XXXXX&lt;br&gt;
+  &lt;abbr title="Phone"&gt;P:&lt;/abbr&gt; (123) 456-7890
+&lt;/address&gt;
+
+&lt;address&gt;
+  &lt;strong&gt;Full Name&lt;/strong&gt;&lt;br&gt;
+  &lt;a href="mailto:#"&gt;mailto@somedomain.com&lt;/a&gt;
+&lt;/address&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1335" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab02a0b25f.jpg" alt="地址">
+</div> <hr>
+<h2>引用（Blockquote）</h2> <p>您可以在任意的 HTML 文本旁使用默认的 &lt;blockquote&gt;。其他选项包括，添加一个 &lt;small&gt; 标签来标识引用的来源，使用 class <i>.pull-right</i> 向右对齐引用。下面的实例演示了这些特性：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 引用&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;blockquote&gt;&lt;p&gt;
+这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;这是一个带有源标题的引用。&lt;small&gt;Someone famous in &lt;cite title="Source Title"&gt;Source Title&lt;/cite&gt;&lt;/small&gt;&lt;/blockquote&gt;
+&lt;blockquote class="pull-right"&gt;这是一个向右对齐的引用。&lt;small&gt;Someone famous in &lt;cite title="Source Title"&gt;Source Title&lt;/cite&gt;&lt;/small&gt;&lt;/blockquote&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1336" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab02a2a27e.jpg" alt="引用">
+</div> <hr>
+<h2>列表</h2> <p>Bootstrap 支持有序列表、无序列表和定义列表。</p> <ul class="list-group">
+<li class="list-group-item">
+<b>有序列表</b>：有序列表是指以数字或其他有序字符开头的列表。</li> <li class="list-group-item">
+<b>无序列表</b>：无序列表是指没有特定顺序的列表，是以传统风格的着重号开头的列表。如果您不想显示这些着重号，您可以使用 class <i>.list-unstyled</i> 来移除样式。您也可以通过使用 class <i>.list-inline</i> 把所有的列表项放在同一行中。</li> <li class="list-group-item">
+<b>定义列表</b>：在这种类型的列表中，每个列表项可以包含 &lt;dt&gt; 和 &lt;dd&gt; 元素。&lt;dt&gt; 代表 <i>定义术语</i>，就像字典，这是被定义的属于（或短语）。接着，&lt;dd&gt; 是 &lt;dt&gt; 的描述。您可以使用 class <i>dl-horizontal</i> 把 &lt;dl&gt; 行中的属于与描述并排显示。</li> </ul>
+<p>下面的实例演示了这些类型的列表：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 列表&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h4&gt;有序列表&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+  &lt;li&gt;Item 4&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;无序列表&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+  &lt;li&gt;Item 4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;未定义样式列表&lt;/h4&gt;
+&lt;ul class="list-unstyled"&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+  &lt;li&gt;Item 4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;内联列表&lt;/h4&gt;
+&lt;ul class="list-inline"&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+  &lt;li&gt;Item 4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;定义列表&lt;/h4&gt;
+&lt;dl&gt;
+  &lt;dt&gt;Description 1&lt;/dt&gt;
+  &lt;dd&gt;Item 1&lt;/dd&gt;
+  &lt;dt&gt;Description 2&lt;/dt&gt;
+  &lt;dd&gt;Item 2&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h4&gt;水平的定义列表&lt;/h4&gt;
+&lt;dl class="dl-horizontal"&gt;
+  &lt;dt&gt;Description 1&lt;/dt&gt;
+  &lt;dd&gt;Item 1&lt;/dd&gt;
+  &lt;dt&gt;Description 2&lt;/dt&gt;
+  &lt;dd&gt;Item 2&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1337" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab02a5bf6a.jpg" alt="列表">
+</div> <hr>
+<h2>更多排版类</h2> <p>下表提供了 Bootstrap 更多排版类的实例：</p> <table class="reference">
+<tr>
+<th style="width:28%;">类</th> <th style="width:65%;">描述</th> <th style="width:7%;">实例</th> </tr>
+<tr>
+<td>.lead</td> <td>使段落突出显示</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1338">实例 »</a></td> </tr>
+<tr>
+<td>.small</td> <td>设定小文本 (设置为父文本的 85% 大小)</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1339">实例 »</a></td> </tr>
+<tr>
+<td>.text-left</td> <td>设定文本左对齐</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1340">实例 »</a></td> </tr>
+<tr>
+<td>.text-center</td> <td>设定文本居中对齐</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1340">实例 »</a></td> </tr>
+<tr>
+<td>.text-right</td> <td>设定文本右对齐</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1340">实例 »</a></td> </tr>
+<tr>
+<td>.text-justify</td> <td>设定文本对齐,段落中超出屏幕部分文字自动换行</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1340">实例 »</a></td> </tr>
+<tr>
+<td>.text-nowrap</td> <td>段落中超出屏幕部分不换行</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1340">实例 »</a></td> </tr>
+<tr>
+<td>.text-lowercase</td> <td>设定文本小写</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1341">实例 »</a></td> </tr>
+<tr>
+<td>.text-uppercase</td> <td>设定文本大写</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1341">实例 »</a></td> </tr>
+<tr>
+<td>.text-capitalize</td> <td>设定单词首字母大写</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1341">实例 »</a></td> </tr>
+<tr>
+<td>.initialism</td> <td>显示在 &lt;abbr&gt; 元素中的文本以小号字体展示</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1342">实例 »</a></td> </tr>
+<tr>
+<td>.blockquote-reverse</td> <td>设定引用右对齐</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1343">实例 »</a></td> </tr>
+<tr>
+<td>.list-unstyled</td> <td>移除默认的列表样式，列表项中左对齐 ( &lt;ul&gt; 和 &lt;ol&gt; 中)。 这个类仅适用于直接子列表项 (如果需要移除嵌套的列表项，你需要在嵌套的列表中使用该样式)</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1344">实例 »</a></td> </tr>
+<tr>
+<td>.list-inline</td> <td>将所有列表项放置同一行</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1345">实例 »</a></td> </tr>
+<tr>
+<td>.dl-horizontal</td> <td>该类设置了浮动和偏移，应用于 &lt;dl&gt; 元素和 &lt;dt&gt; 元素中，具体实现可以查看实例</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1346">实例 »</a></td> </tr>
+<tr>
+<td>.pre-scrollable</td> <td>使 &lt;pre&gt; 元素可滚动 scrollable</td> <td><a target="_blank" class="btn btn-xs btn-success color-f" href="http://www.shouce.ren/study/api/s/1347">实例 »</a></td> </tr>
+</table>
+	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

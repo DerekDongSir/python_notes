@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 环境安装</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 环境安装</h1>
+	<hr>
+		<div class="tutintro"><p>Bootstrap 安装是非常容易的。本章将讲解如何下载并安装 Bootstrap，讨论 Bootstrap 文件结构，并通过一个实例演示它的用法。</p></div><h2 class="tutheader">下载 Bootstrap</h2><p>您可以从 <a textvalue="Bootstrap中文网" target="_blank" href="http://www.bootcss.com/">Bootstrap中文网</a> 上下载 Bootstrap 的最新版本。当您点击这个链接时，您将看到如下所示的网页：</p><p><img src="../image/560aae9da9ad1.jpg" alt="Bootstrap 下载"/></p><p>您会看到两个按钮：</p><ul class="list-group"><li class="list-group-item"><em>Download Bootstrap</em>：下载 Bootstrap。点击该按钮，您可以下载 Bootstrap CSS、JavaScript 和字体的预编译的压缩版本。不包含文档和最初的源代码文件。</li><li class="list-group-item"><em>Download Source</em>：下载源代码。点击该按钮，您可以直接从 from 上得到最新的 Bootstrap LESS 和 JavaScript 源代码。</li></ul><p>如果您使用的是未编译的源代码，您需要编译 LESS 文件来生成可重用的 CSS 文件。对于编译 LESS 文件，Bootstrap 官方只支持 <a target="_blank" rel="nofollow" href="//twitter.github.io/recess/">Recess</a>，这是 Twitter 的基于 <a target="_blank" rel="nofollow" href="//lesscss.org/">less.js</a> 的 CSS 提示。</p><p>为了更好的了解和更方便的使用，我们将在本教程中使用 Bootstrap 的预编译版本。</p><p>由于文件是被编译过和压缩过的，在独立的功能开发中，您不必每次都包含这些独立的文件。</p><p>本教程编写时，使用的是最新版（Bootstrap 3）。</p><h2 class="tutheader">文件结构</h2><h3>预编译的 Bootstrap</h3><p>当您下载了 Bootstrap 的已编译的版本，解压缩 ZIP 文件，您将看到下面的文件/目录结构：</p><p><img src="../image/560aae9dce8b1.jpg" alt="已编译的 Bootstrap 文件结构"/></p><p>如上图所示，可以看到已编译的 CSS 和 JS（bootstrap.*），以及已编译压缩的 CSS 和 JS（bootstrap.min.*）。同时也包含了 Glyphicons 的字体，这是一个可选的 Bootstrap 主题。</p><h3>Bootstrap 源代码</h3><p>如果您下载了 Bootstrap 源代码，那么文件结构将如下所示：</p><p><img src="../image/560aae9df2ada.jpg" alt="Bootstrap 源代码结构"/></p><ul class="list-group"><li class="list-group-item"><em>less/</em>、<em>js/</em> 和 <em>fonts/</em> 下的文件分别是 Bootstrap CSS、JS 和图标字体的源代码。</li><li class="list-group-item"><em>dist/</em> 文件夹包含了上面预编译下载部分中所列的文件和文件夹。</li><li class="list-group-item"><em>docs-assets/</em>、<em>examples/</em> 和所有的 <em>*.html</em> 文件是 Bootstrap 文档。</li></ul><h2 class="tutheader">HTML 模板</h2><p>一个使用了 Bootstrap 的基本的 HTML 模板如下所示：</p><pre class="prettyprint">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&nbsp;&nbsp;&nbsp;&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;模板&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;name=&quot;viewport&quot;&nbsp;content=&quot;width=device-width,&nbsp;initial-scale=1.0&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;引入&nbsp;Bootstrap&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;HTML5&nbsp;Shim&nbsp;和&nbsp;Respond.js&nbsp;用于让&nbsp;IE8&nbsp;支持&nbsp;HTML5元素和媒体查询&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;注意：&nbsp;如果通过&nbsp;file://&nbsp;&nbsp;引入&nbsp;Respond.js&nbsp;文件，则该文件无法起效果&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--[if&nbsp;lt&nbsp;IE&nbsp;9]&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;![endif]--&gt;
+&nbsp;&nbsp;&nbsp;&lt;/head&gt;
+&nbsp;&nbsp;&nbsp;&lt;body&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello,&nbsp;world!&lt;/h1&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;jQuery&nbsp;(Bootstrap&nbsp;的&nbsp;JavaScript&nbsp;插件需要引入&nbsp;jQuery)&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;https://code.jquery.com/jquery.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;包括所有已编译的插件&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p>在这里，您可以看到包含了 <strong>jquery.js</strong>、<strong>bootstrap.min.js</strong> 和 <strong>bootstrap.min.css</strong> 文件，用于让一个常规的 HTML 文件变为使用了 Bootstrap 的模板。</p><p>有关上面代码段中每个元素的细节将在 <a textvalue="Bootstrap CSS 概览" target="_self" href="/api/view/a/774">Bootstrap CSS 概览</a> 章节详细讲解。</p><h2 class="tutheader">实例</h2><p>现在让我们尝试使用Bootstrap输出&quot;Hello, world!&quot;：</p><pre>&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;在线尝试&nbsp;Bootstrap&nbsp;实例&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello,&nbsp;world!&lt;/h1&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1327" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><h2 class="tutheader">Bootstrap CDN推荐</h2><p>本站实例采用的是百度的静态资源库(<a href="//cdn.code.baidu.com/" target="_blank">http://cdn.code.baidu.com/</a>)上的Bootstrap资源。</p><p>百度的静态资源库的 CDN 服务，访问速度更快、加速效果更明显、没有速度和带宽限制、永久免费,引入代码如下：</p><pre>&lt;!--&nbsp;新&nbsp;Bootstrap&nbsp;核心&nbsp;CSS&nbsp;文件&nbsp;--&gt;
+&lt;link&nbsp;href=&quot;http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+
+&lt;!--&nbsp;可选的Bootstrap主题文件（一般不使用）&nbsp;--&gt;
+&lt;script&nbsp;src=&quot;http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css&quot;&gt;&lt;/script&gt;
+
+&lt;!--&nbsp;jQuery文件。务必在bootstrap.min.js&nbsp;之前引入&nbsp;--&gt;
+&lt;script&nbsp;src=&quot;http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!--&nbsp;最新的&nbsp;Bootstrap&nbsp;核心&nbsp;JavaScript&nbsp;文件&nbsp;--&gt;
+&lt;script&nbsp;src=&quot;http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</pre><p></p>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

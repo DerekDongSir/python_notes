@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 列表组</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 列表组</h1>
+	<hr>
+		  <p>本章我们将讲解列表组。列表组件用于以列表形式呈现复杂的和自定义的内容。创建一个基本的列表组的步骤如下：</p> <ul class="list-group">
+<li class="list-group-item">向元素 &lt;ul&gt; 添加 class <b>.list-group</b>。</li> <li class="list-group-item">向 &lt;li&gt; 添加 class <b>.list-group-item</b>。</li> </ul>
+<p>下面的实例演示了这点：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 基本的列表组&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;ul class="list-group"&gt;
+   &lt;li class="list-group-item"&gt;免费域名注册&lt;/li&gt;
+   &lt;li class="list-group-item"&gt;免费 Window 空间托管&lt;/li&gt;
+   &lt;li class="list-group-item"&gt;图像的数量&lt;/li&gt;
+   &lt;li class="list-group-item"&gt;24*7 支持&lt;/li&gt;
+   &lt;li class="list-group-item"&gt;每年更新成本&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1693" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab24fc7bbc.jpg" alt="基本的列表组">
+</div> <h2>向列表组添加徽章</h2> <p>我们可以向任意的列表项添加徽章组件，它会自动定位到右边。只需要在 &lt;li&gt; 元素中添加 <b>&lt;span class="badge"&gt;</b> 即可。下面的实例演示了这点：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 向列表组添加徽章&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;ul class="list-group"&gt;
+   &lt;li class="list-group-item"&gt;免费域名注册&lt;/li&gt;
+   &lt;li class="list-group-item"&gt;免费 Window 空间托管&lt;/li&gt;
+   &lt;li class="list-group-item"&gt;图像的数量&lt;/li&gt;
+   &lt;li class="list-group-item"&gt;
+      &lt;span class="badge"&gt;新&lt;/span&gt;
+      24*7 支持
+   &lt;/li&gt;
+   &lt;li class="list-group-item"&gt;每年更新成本&lt;/li&gt;
+   &lt;li class="list-group-item"&gt;
+      &lt;span class="badge"&gt;新&lt;/span&gt;
+      折扣优惠
+   &lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1694" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab24ff36fe.jpg" alt="列表组中的徽章">
+</div> <h2>向列表组添加链接</h2> <p>通过使用锚标签代替列表项，我们可以向列表组添加链接。我们需要使用 &lt;div&gt; 代替 &lt;ul&gt; 元素。下面的实例演示了这点：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 向列表组添加链接&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;a href="#" class="list-group-item active"&gt;
+   免费域名注册
+&lt;/a&gt;
+&lt;a href="#" class="list-group-item"&gt;24*7 支持&lt;/a&gt;
+&lt;a href="#" class="list-group-item"&gt;免费 Window 空间托管&lt;/a&gt;
+&lt;a href="#" class="list-group-item"&gt;图像的数量&lt;/a&gt;
+&lt;a href="#" class="list-group-item"&gt;每年更新成本&lt;/a&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1695" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab2501dd0d.jpg" alt="列表组中的链接">
+</div> <h2>向列表组添加自定义内容</h2> <p>我们可以向上面已添加链接的列表组添加任意的 HTML 内容。下面的实例演示了这点：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 向列表组添加自定义内容&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="list-group"&gt;
+   &lt;a href="#" class="list-group-item active"&gt;
+      &lt;h4 class="list-group-item-heading"&gt;
+         入门网站包
+      &lt;/h4&gt;
+   &lt;/a&gt;
+   &lt;a href="#" class="list-group-item"&gt;
+      &lt;h4 class="list-group-item-heading"&gt;
+         免费域名注册
+      &lt;/h4&gt;
+      &lt;p class="list-group-item-text"&gt;
+         您将通过网页进行免费域名注册。
+      &lt;/p&gt;
+   &lt;/a&gt;
+   &lt;a href="#" class="list-group-item"&gt;
+      &lt;h4 class="list-group-item-heading"&gt;
+         24*7 支持
+      &lt;/h4&gt;
+      &lt;p class="list-group-item-text"&gt;
+         我们提供 24*7 支持。
+      &lt;/p&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="list-group"&gt;
+   &lt;a href="#" class="list-group-item active"&gt;
+      &lt;h4 class="list-group-item-heading"&gt;
+         商务网站包
+      &lt;/h4&gt;
+   &lt;/a&gt;
+   &lt;a href="#" class="list-group-item"&gt;
+      &lt;h4 class="list-group-item-heading"&gt;
+         免费域名注册
+      &lt;/h4&gt;
+      &lt;p class="list-group-item-text"&gt;
+         您将通过网页进行免费域名注册。
+      &lt;/p&gt;
+   &lt;/a&gt;
+   &lt;a href="#" class="list-group-item"&gt;
+      &lt;h4 class="list-group-item-heading"&gt;24*7 支持&lt;/h4&gt;
+      &lt;p class="list-group-item-text"&gt;我们提供 24*7 支持。&lt;/p&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1696" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab25042aee.jpg" alt="列表组中的自定义内容">
+</div> 	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 徽章（Badges）</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 徽章（Badges）</h1>
+	<hr>
+		  <p>本章将讲解 Bootstrap 徽章（Badges）。徽章与标签相似，主要的区别在于徽章的边角更加圆滑。</p> <p>徽章（Badges）主要用于突出显示新的或未读的项。如需使用徽章，只需要把 <b>&lt;span class="badge"&gt;</b> 添加到链接、Bootstrap 导航等这些元素上即可。</p> <p>下面的实例演示了这点：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 徽章（Badges）&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;a href="#"&gt;Mailbox &lt;span class="badge"&gt;50&lt;/span&gt;&lt;/a&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1676" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab1f4dda84.jpg" alt="徽章（Badges）">
+</div> <p>当没有新的或未读的项时，通过 CSS 的 <b> :empty</b> 选择器，徽章会折叠起来，表示里边没有内容。</p> <h2>激活导航状态</h2> <p>您可以在激活状态的胶囊式导航和列表导航中放置徽章。通过使用 <b>&lt;span class="badge"&gt;</b> 来激活链接，如下面的实例所示：</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 激活导航状态&lt;/title&gt;
+   &lt;link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="/scripts/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h4&gt;胶囊式导航中的激活状态&lt;/h4&gt;
+&lt;ul class="nav nav-pills"&gt;
+   &lt;li class="active"&gt;&lt;a href="#"&gt;首页 &lt;span class="badge"&gt;42&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="#"&gt;简介&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="#"&gt;消息 &lt;span class="badge"&gt;3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h4&gt;列表导航中的激活状态&lt;/h4&gt;
+&lt;ul class="nav nav-pills nav-stacked" style="max-width: 260px;"&gt;
+   &lt;li class="active"&gt;
+      &lt;a href="#"&gt;
+         &lt;span class="badge pull-right"&gt;42&lt;/span&gt;
+         首页
+      &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;&lt;a href="#"&gt;简介&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;
+      &lt;a href="#"&gt;
+         &lt;span class="badge pull-right"&gt;3&lt;/span&gt;
+         消息
+      &lt;/a&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1677" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab1f50941c.jpg" alt="激活导航状态">
+</div> 	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

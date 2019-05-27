@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 响应式实用工具</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 响应式实用工具</h1>
+	<hr>
+		  <div class="tutintro"> <p>Bootstrap 提供了一些辅助类，以便更快地实现对移动设备友好的开发。这些可以通过媒体查询结合大型、小型和中型设备，实现内容对设备的显示和隐藏。</p> <p>需要谨慎使用这些工具，避免在同一个站点创建完全不同的版本。<b>响应式实用工具目前只适用于块和表切换。</b></p> <table class="reference">
+<thead><tr>
+<th></th> <th> 超小屏幕<br> 手机 (&lt;768px) </th> <th> 小屏幕<br> 平板 (≥768px) </th> <th> 中等屏幕<br> 桌面 (≥992px) </th> <th> 大屏幕<br> 桌面 (≥1200px) </th> </tr></thead>
+<tbody>
+<tr>
+<td>.visible-xs-*</td> <td>可见</td> <td>隐藏</td> <td>隐藏</td> <td>隐藏</td> </tr>
+<tr>
+<td>.visible-sm-*</td> <td>隐藏</td> <td>可见</td> <td>隐藏</td> <td>隐藏</td> </tr>
+<tr>
+<td>.visible-md-*</td> <td>隐藏</td> <td>隐藏</td> <td>可见</td> <td>隐藏</td> </tr>
+<tr>
+<td>.visible-lg-*</td> <td>隐藏</td> <td>隐藏</td> <td>隐藏</td> <td>可见</td> </tr>
+</tbody>
+<tbody>
+<tr>
+<td>.hidden-xs</td> <td>隐藏</td> <td>可见</td> <td>可见</td> <td>可见</td> </tr>
+<tr>
+<td>.hidden-sm</td> <td>可见</td> <td>隐藏</td> <td>可见</td> <td>可见</td> </tr>
+<tr>
+<td>.hidden-md</td> <td>可见</td> <td>可见</td> <td>隐藏</td> <td>可见</td> </tr>
+<tr>
+<td>.hidden-lg</td> <td>可见</td> <td>可见</td> <td>可见</td> <td>隐藏</td> </tr>
+</tbody>
+</table>
+</div> <p>从 v3.2.0 版本起，形如 .visible-*-* 的类针对每种屏幕大小都有了三种变体，每个针对 CSS 中不同的 display 属性，列表如下：</p> <table class="reference">
+<thead><tr>
+<th>类组</th> <th>CSS display</th> </tr></thead>
+<tbody>
+<tr>
+<td>.visible-*-block</td> <td>display: block;</td> </tr>
+<tr>
+<td>.visible-*-inline</td> <td>display: inline;</td> </tr>
+<tr>
+<td>.visible-*-inline-block</td> <td>display: inline-block;</td> </tr>
+</tbody>
+</table>
+<p>因此，以超小屏幕（xs）为例，可用的 .visible-*-* 类是：.visible-xs-block、.visible-xs-inline 和 .visible-xs-inline-block。</p> <p>.visible-xs、.visible-sm、.visible-md 和 .visible-lg 类也同时存在。但是从 v3.2.0 版本开始不再建议使用。除了 &lt;table&gt; 相关的元素的特殊情况外，它们与 .visible-*-block 大体相同。 </p> <h2>打印类</h2> <p>下表列出了打印类。使用这些切换打印内容。</p> <table class="reference">
+<thead><tr>
+<th>class</th> <th>浏览器</th> <th>打印机</th> </tr></thead>
+<tbody>
+<tr>
+<td> .visible-print-block<br> .visible-print-inline<br> .visible-print-inline-block </td> <td class="is-hidden">隐藏</td> <td>可见</td> </tr>
+<tr>
+<td>.hidden-print</td> <td>可见</td> <td class="is-hidden">隐藏</td> </tr>
+</tbody>
+</table>
+<h2>实例</h2> <p>下面的实例演示了上面所列举的帮助器类的用法。调整浏览器的窗口大小，或者在不同的设备上加载实例，测试响应式实用工具类。</p> <pre class="prettyprint tryit">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Bootstrap 实例 - 响应式实用工具&lt;/title&gt;
+   &lt;link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"&gt;
+   &lt;script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="container" style="padding: 40px;"&gt;
+   &lt;div class="row visible-on"&gt;
+      &lt;div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;"&gt;
+         &lt;span class="hidden-xs"&gt;特别小型&lt;/span&gt;
+         &lt;span class="visible-xs"&gt;✔ 在特别小型设备上可见&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;"&gt;
+         &lt;span class="hidden-sm"&gt;小型&lt;/span&gt;
+         &lt;span class="visible-sm"&gt;✔ 在小型设备上可见&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="clearfix visible-xs"&gt;&lt;/div&gt;
+      &lt;div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;"&gt;
+         &lt;span class="hidden-md"&gt;中型&lt;/span&gt;
+         &lt;span class="visible-md"&gt;✔ 在中型设备上可见&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;"&gt;
+         &lt;span class="hidden-lg"&gt;大型&lt;/span&gt;
+         &lt;span class="visible-lg"&gt;✔ 在大型设备上可见&lt;/span&gt;
+      &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a href="http://www.shouce.ren/study/api/s/1427" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p> <p>结果如下所示：</p> <div class="m-bg-b"> <img src="../image/560ab0965c7eb.jpg" alt="响应式实用工具">
+</div> <p><b>勾号（✔）</b> 表示元素在当前视口中可见。</p> 	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>

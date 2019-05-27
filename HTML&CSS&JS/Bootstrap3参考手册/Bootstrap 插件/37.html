@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+<meta name="language" content="zh-cn" />
+<meta name="renderer" content="webkit" />
+<title>Bootstrap 标签页（Tab）</title>
+<link rel="stylesheet" type="text/css" href="../style/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../style/love.css" />
+<script type="text/javascript" src="../style/jquery.min.js"></script>
+<script type="text/javascript" src="../style/bootstrap.min.js"></script>
+<script type="text/javascript" src="../style/prettify.js"></script>
+</head>
+<body>
+<div class="m-bg">
+	<h1>Bootstrap 标签页（Tab）</h1>
+	<hr>
+		<p>标签页（Tab）在 <a textvalue="Bootstrap 导航元素" target="_self" href="/api/view/a/789">Bootstrap 导航元素</a> 一章中介绍过。通过结合一些 data 属性，您可以轻松地创建一个标签页界面。通过这个插件您可以把内容放置在标签页或者是胶囊式标签页甚至是下拉菜单标签页中。</p><blockquote><img src="../image/560ab01874dc2.png"/>如果您想要单独引用该插件的功能，那么您需要引用 <strong>tab.js</strong>。或者，正如 Bootstrap 插件概览 一章中所提到，您可以引用 <em>bootstrap.js</em> 或压缩版的 <em>bootstrap.min.js</em>。</blockquote><h2>用法</h2><p>您可以通过以下两种方式启用标签页：</p><ul class="list-group"><li class="list-group-item"><strong>通过 data 属性</strong>：您需要添加 <strong>data-toggle=&quot;tab&quot;</strong> 或 <strong>data-toggle=&quot;pill&quot;</strong> 到锚文本链接中。<p>添加 <strong>nav</strong> 和 <strong>nav-tabs</strong> 类到 <strong>ul</strong> 中，将会应用 Bootstrap <a href="bootstrap-navigation-elements.html">标签样式</a>，添加 <strong>nav</strong> 和 <strong>nav-pills</strong> 类到 <strong>ul</strong> 中，将会应用 Bootstrap <a href="bootstrap-navigation-elements.html">胶囊式样式</a>。</p><pre class="prettyprint">&lt;ul&nbsp;class=&quot;nav&nbsp;nav-tabs&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#identifier&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+...
+&lt;/ul&gt;</pre> </li><li class="list-group-item"><strong>通过 JavaScript</strong>：您可以使用 Javscript 来启用标签页，如下所示： <pre class="prettyprint">$(&#39;#myTab&nbsp;a&#39;).click(function&nbsp;(e)&nbsp;{
+&nbsp;&nbsp;e.preventDefault()
+&nbsp;&nbsp;$(this).tab(&#39;show&#39;)
+})</pre> <p>下面的实例演示了以不同的方式来激活各个标签页：</p><pre class="prettyprint">//&nbsp;通过名称选取标签页
+$(&#39;#myTab&nbsp;a[href=&quot;#profile&quot;]&#39;).tab(&#39;show&#39;)
+&nbsp;
+//&nbsp;选取第一个标签页
+$(&#39;#myTab&nbsp;a:first&#39;).tab(&#39;show&#39;)&nbsp;
+
+//&nbsp;选取最后一个标签页
+$(&#39;#myTab&nbsp;a:last&#39;).tab(&#39;show&#39;)&nbsp;
+
+//&nbsp;选取第三个标签页（从&nbsp;0&nbsp;开始索引）
+$(&#39;#myTab&nbsp;li:eq(2)&nbsp;a&#39;).tab(&#39;show&#39;)</pre> </li></ul><h2>淡入淡出效果</h2><p>如果需要为标签页设置淡入淡出效果，请添加 <strong>.fade</strong> 到每个 <strong>.tab-pane</strong> 后面。第一个标签页必须添加 <strong>.in</strong> 类，以便淡入显示初始内容，如下面实例所示：</p><pre class="prettyprint">&lt;div&nbsp;class=&quot;tab-content&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&nbsp;in&nbsp;active&quot;&nbsp;id=&quot;home&quot;&gt;...&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;svn&quot;&gt;...&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;ios&quot;&gt;...&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;java&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre><p></p><h3>实例</h3><p>下面的实例演示了使用 data 属性的标签页（Tab）插件及其淡入淡出的效果：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;标签页（Tab）插件&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;ul&nbsp;id=&quot;myTab&quot;&nbsp;class=&quot;nav&nbsp;nav-tabs&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#home&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jianzhan&nbsp;Home
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#ios&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;iOS&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;id=&quot;myTabDrop1&quot;&nbsp;class=&quot;dropdown-toggle&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-toggle=&quot;dropdown&quot;&gt;Java&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;b&nbsp;class=&quot;caret&quot;&gt;&lt;/b&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;dropdown-menu&quot;&nbsp;role=&quot;menu&quot;&nbsp;aria-labelledby=&quot;myTabDrop1&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#jmeter&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;jmeter&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#ejb&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;ejb&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&nbsp;id=&quot;myTabContent&quot;&nbsp;class=&quot;tab-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&nbsp;in&nbsp;active&quot;&nbsp;id=&quot;home&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;W3Cschoool手册网是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;ios&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;iOS&nbsp;是一个由苹果公司开发和发布的手机操作系统。最初是于&nbsp;2007&nbsp;年首次发布&nbsp;iPhone、iPod&nbsp;Touch&nbsp;和&nbsp;Apple&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TV。iOS&nbsp;派生自&nbsp;OS&nbsp;X，它们共享&nbsp;Darwin&nbsp;基础。OS&nbsp;X&nbsp;操作系统是用在苹果电脑上，iOS&nbsp;是苹果的移动版本。&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;jmeter&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;jMeter&nbsp;是一款开源的测试软件。它是&nbsp;100%&nbsp;纯&nbsp;Java&nbsp;应用程序，用于负载和性能测试。&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;ejb&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Enterprise&nbsp;Java&nbsp;Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如&nbsp;JBOSS、Web&nbsp;Logic&nbsp;等）的&nbsp;J2EE&nbsp;上。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1716" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2c18ff2f.jpg" alt="标签页（Tab）插件"/></div><h2>方法</h2><p><strong>.$().tab</strong>：该方法可以激活标签页元素和内容容器。标签页需要用一个 <strong>data-target</strong> 或者一个指向 DOM 中容器节点的 <strong>href</strong>。</p><pre class="prettyprint">&lt;ul&nbsp;class=&quot;nav&nbsp;nav-tabs&quot;&nbsp;id=&quot;myTab&quot;&gt;
+&nbsp;&nbsp;&lt;li&nbsp;class=&quot;active&quot;&gt;&lt;a&nbsp;href=&quot;#identifier&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;.....
+&lt;/ul&gt;
+&lt;div&nbsp;class=&quot;tab-content&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;active&quot;&nbsp;id=&quot;home&quot;&gt;...&lt;/div&gt;
+&nbsp;&nbsp;.....
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;$(function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;$(&#39;#myTab&nbsp;a:last&#39;).tab(&#39;show&#39;)
+&nbsp;&nbsp;})
+&lt;/script&gt;</pre><p></p><h3>实例</h3><p>下面的实例演示了标签页（Tab）插件方法 <strong>.tab</strong> 的用法。在本实例中，第二个标签页 <em>iOS</em> 是激活的：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;标签页（Tab）插件方法&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;ul&nbsp;id=&quot;myTab&quot;&nbsp;class=&quot;nav&nbsp;nav-tabs&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;active&quot;&gt;&lt;a&nbsp;href=&quot;#home&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jianzhan&nbsp;Home&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#ios&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;iOS&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;id=&quot;myTabDrop1&quot;&nbsp;class=&quot;dropdown-toggle&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-toggle=&quot;dropdown&quot;&gt;Java&nbsp;&lt;b&nbsp;class=&quot;caret&quot;&gt;&lt;/b&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;dropdown-menu&quot;&nbsp;role=&quot;menu&quot;&nbsp;aria-labelledby=&quot;myTabDrop1&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#jmeter&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jmeter&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#ejb&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ejb&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&nbsp;id=&quot;myTabContent&quot;&nbsp;class=&quot;tab-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&nbsp;in&nbsp;active&quot;&nbsp;id=&quot;home&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;W3Cschoool手册网是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;ios&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;iOS&nbsp;是一个由苹果公司开发和发布的手机操作系统。最初是于&nbsp;2007&nbsp;年首次发布&nbsp;iPhone、iPod&nbsp;Touch&nbsp;和&nbsp;Apple&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TV。iOS&nbsp;派生自&nbsp;OS&nbsp;X，它们共享&nbsp;Darwin&nbsp;基础。OS&nbsp;X&nbsp;操作系统是用在苹果电脑上，iOS&nbsp;是苹果的移动版本。&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;jmeter&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;jMeter&nbsp;是一款开源的测试软件。它是&nbsp;100%&nbsp;纯&nbsp;Java&nbsp;应用程序，用于负载和性能测试。&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;ejb&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Enterprise&nbsp;Java&nbsp;Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如&nbsp;JBOSS、Web&nbsp;Logic&nbsp;等）的&nbsp;J2EE&nbsp;上。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&#39;#myTab&nbsp;li:eq(1)&nbsp;a&#39;).tab(&#39;show&#39;);
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1717" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2c1b8f79.jpg" alt="标签页（Tab）插件方法"/></div><h2>事件</h2><p>下表列出了标签页（Tab）插件中要用到的事件。这些事件可在函数中当钩子使用。</p><table class="reference notranslate"><tbody><tr class="firstRow"><th>事件</th><th>描述</th><th>实例</th></tr><tr><td>show.bs.tab</td><td>该事件在标签页显示时触发，但是必须在新标签页被显示之前。分别使用 <strong>event.target</strong> 和 <strong>event.relatedTarget</strong> 来定位到激活的标签页和前一个激活的标签页。</td><td><pre class="prettyprint">$(&#39;a[data-toggle=&quot;tab&quot;]&#39;).on(&#39;show.bs.tab&#39;,&nbsp;function&nbsp;(e)&nbsp;{
+&nbsp;&nbsp;e.target&nbsp;//&nbsp;激活的标签页
+&nbsp;&nbsp;e.relatedTarget&nbsp;//&nbsp;前一个激活的标签页
+})</pre></td></tr><tr><td>shown.bs.tab</td><td>该事件在标签页显示时触发，但是必须在某个标签页已经显示之后。分别使用 <strong>event.target</strong> 和 <strong>event.relatedTarget</strong> 来定位到激活的标签页和前一个激活的标签页。</td><td><pre class="prettyprint">$(&#39;a[data-toggle=&quot;tab&quot;]&#39;).on(&#39;shown.bs.tab&#39;,&nbsp;function&nbsp;(e)&nbsp;{
+&nbsp;&nbsp;e.target&nbsp;//&nbsp;激活的标签页
+&nbsp;&nbsp;e.relatedTarget&nbsp;//&nbsp;前一个激活的标签页
+})</pre></td></tr></tbody></table><h3>实例</h3><p>下面的实例演示了标签页（Tab）插件事件的用法。在本实例中，将显示当前和前一个访问过的标签页：</p><pre class="prettyprint tryit">&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Bootstrap&nbsp;实例&nbsp;-&nbsp;标签页（Tab）插件事件&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;/bootstrap/css/bootstrap.min.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/scripts/jquery.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;hr&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&nbsp;class=&quot;active-tab&quot;&gt;&lt;strong&gt;激活的标签页&lt;/strong&gt;：&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&nbsp;class=&quot;previous-tab&quot;&gt;&lt;strong&gt;前一个激活的标签页&lt;/strong&gt;：&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&nbsp;id=&quot;myTab&quot;&nbsp;class=&quot;nav&nbsp;nav-tabs&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;active&quot;&gt;&lt;a&nbsp;href=&quot;#home&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jianzhan&nbsp;Home&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#ios&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;iOS&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;id=&quot;myTabDrop1&quot;&nbsp;class=&quot;dropdown-toggle&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-toggle=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Java&nbsp;&lt;b&nbsp;class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;dropdown-menu&quot;&nbsp;role=&quot;menu&quot;&nbsp;aria-labelledby=&quot;myTabDrop1&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#jmeter&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;jmeter&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#ejb&quot;&nbsp;tabindex=&quot;-1&quot;&nbsp;data-toggle=&quot;tab&quot;&gt;ejb&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&nbsp;id=&quot;myTabContent&quot;&nbsp;class=&quot;tab-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&nbsp;in&nbsp;active&quot;&nbsp;id=&quot;home&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;W3Cschoool手册网是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;ios&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;iOS&nbsp;是一个由苹果公司开发和发布的手机操作系统。最初是于&nbsp;2007&nbsp;年首次发布&nbsp;iPhone、iPod&nbsp;Touch&nbsp;和&nbsp;Apple&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TV。iOS&nbsp;派生自&nbsp;OS&nbsp;X，它们共享&nbsp;Darwin&nbsp;基础。OS&nbsp;X&nbsp;操作系统是用在苹果电脑上，iOS&nbsp;是苹果的移动版本。&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;jmeter&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;jMeter&nbsp;是一款开源的测试软件。它是&nbsp;100%&nbsp;纯&nbsp;Java&nbsp;应用程序，用于负载和性能测试。&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;fade&quot;&nbsp;id=&quot;ejb&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Enterprise&nbsp;Java&nbsp;Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如&nbsp;JBOSS、Web&nbsp;Logic&nbsp;等）的&nbsp;J2EE&nbsp;上。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&#39;a[data-toggle=&quot;tab&quot;]&#39;).on(&#39;shown.bs.tab&#39;,&nbsp;function&nbsp;(e)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;获取已激活的标签页的名称
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;activeTab&nbsp;=&nbsp;$(e.target).text();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;获取前一个激活的标签页的名称
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;previousTab&nbsp;=&nbsp;$(e.relatedTarget).text();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.active-tab&nbsp;span&quot;).html(activeTab);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.previous-tab&nbsp;span&quot;).html(previousTab);
+&nbsp;&nbsp;&nbsp;});
+});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p></p><p><a href="http://www.shouce.ren/study/api/s/1718" target="_blank"><button class="btn btn-success">效果预览 »</button></a></p><p>结果如下所示：</p><div class="m-bg-b"><img src="../image/560ab2c1db649.jpg" alt="标签页（Tab）插件事件"/></div>	<div class="text-center padding-10 margin-t-5">
+					</div>
+</div>
+<div class="m-bg text-center margin-t-10">
+	<p>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/about">关于我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/contact">联系我们</a>
+		<a class="btn btn-xs btn-default" href="http://www.shouce.ren/main/lyb">留言板</a>
+	</p>
+	<p><a class="btn btn-xs btn-default" href="http://www.shouce.ren">手册网</a></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("pre").addClass("prettyprint linenums");
+	//代码高亮
+	prettyPrint();
+	$("table").attr('class','table table-striped table-bordered table-condensed');
+});
+</script>
+</body>
+</html>
