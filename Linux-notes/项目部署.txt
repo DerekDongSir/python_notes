@@ -1,0 +1,71 @@
+
+python mysql  django  mysqlclient 等的安装
+
+uwsgi  和 nginx  的安装：
+pip3 install uwsgi
+yum -y install nginx
+ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi   #配置软链接
+
+安装项目运行所依赖的modules,此时可能会出现unexpected errors，解决方向是yum 所缺的依赖
+
+可在 /root 下创建 project文件夹，用于存放待部署的项目
+
+settings 文件中，在 STATIC_URL下方添加静态链接文件位置
+STATIC_ROOT = os.path.join(BASE_DIR, 'collect_static') #非debug模式下使用，debug模式下需要注释掉
+如此便不会和 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static'),]冲突 
+在项目目录下执行 python manage.py collect_static 将静态资源文件汇总到collect_static
+
+设置uwsgi的配置文件
+为了方便，在/root下创建 uwsgi的配置文件，后缀名为 .ini
+vi uwsgi.ini 
+内容为：
+[uwsgi]
+http = 192.168.48.4:9000   #云服务器的内网ip!!!
+socket = 192.168.48.4:9001 # 同上,这个是与nginx服务器进行通信的端口
+chdir = /root/project/Cloud # 部署的项目地址
+wsgi-file = Cloud/wsgi.py 
+processes = 4  #进程数
+threads = 2    #线程数
+stats = 192.168.48.4:9002 #同上，内网ip
+vacuum = true    ## clear environment on exit
+pidfile = /root/project/Cloud/uwsgi.pid     #进程ID存放于此文件
+daemonize = /root/project/Cloud/uwsgi.log   #后台启动模式，日志文件记录位置
+static-map =/static=/root/project/Cloud/collect_static # 静态资源路径
+
+
+设置nginx的配置文件
+nginx配置文件不需要再次创建，而是对/etc/nginx/nginx.conf进行修改
+user  root  # 如果是nginx,静态资源会始终无法加载
+
+将以下内容放入 http{ }中
+
+	server {
+	        listen 80;
+	        server_name  180.76.165.94;  # nginx服务器的公网 ip
+	        charset utf-8;
+
+	        location / {
+	                uwsgi_pass 180.76.165.94:9001;  # uwsgi服务器的公网ip,监听端口和uwsgi相同
+	                include  /etc/nginx/uwsgi_params; 
+	        }
+	        location /static { 
+	                alias /root/project/Cloud/collect_static; #uwsgi配置的静态链接的地址
+	        }
+	}
+
+启动：
+	uwsgi:
+		uwsgi  --ini  uwsgi.ini  # 此处uwsgi.ini是相对路径
+		uwsgi --stop  /root/project/Cloud/uwsgi.pid   #通过进程id文件停止uwsgi
+	nginx:
+		nginx   # 启动nginx
+		nginx -s stop  # 关闭 nginx
+		nginx -s  reload  # 重启 nginx
+
+	访问： (nginx)ip:80  访问
+
+
+	或者可以在文件目录下运行   python manage.py runserver 0.0.0.0:8000 启动项目，可以看到报错信息
+
+
+
